@@ -1,0 +1,57 @@
+1.0.15
+	Added /pluginConstructorAPI or /pcapi
+	Added a shop sub-command
+	Added PluginShop to download my plugins if the player has permission.
+	Added permissions.
+
+1.0.14
+	Added metrics
+
+1.0.13
+	Fixed updater
+
+1.0.12
+	Fixed ObjectRotator
+	Updated playerlist
+
+1.0.11
+	Added ObjectRotator
+	Added more plugins for support
+
+1.0.10
+	Improved system for storing plugin IDs
+	Fixed counter.
+	Minor code cleanup
+	Added AIR for transparent pixel values for PP
+
+1.0.9
+	Fixed file hashing error
+	Added support for more of my plugins.
+
+1.0.8
+	Files are no longer downloaded to the computer (weird bug fixed)
+
+1.0.7
+	Fixed file streaming.
+
+1.0.6
+	Added and updated PlayerList tab. Added header-footer, and included texture support.
+	Fixed file streaming. There are no longer a need for physical files in order to get my other plugins
+
+1.0.5
+	Fixed file streaming. Should fix any errors if the plugin cannot connect to bukkitdev.
+	
+ 1.0.4
+ 	Added improved color detection for PP
+ 	
+ 1.0.3
+ 	Added support for NPCAuctions
+ 	Added proxie util
+ 	
+ 1.0.2
+	Fixed webparser to include single quote support for href.
+	Added support for more of my plugins
+ 	
+1.0.0
+	init post
+
