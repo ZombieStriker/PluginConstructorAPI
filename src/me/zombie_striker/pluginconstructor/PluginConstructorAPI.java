@@ -4,11 +4,13 @@ import java.io.File;
 import java.lang.reflect.Field;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import me.zombie_striker.pluginconstructor.privatemetrics.Metrics;
 import me.zombie_striker.pluginconstructor.privateshop.PluginShop;
@@ -20,12 +22,25 @@ public class PluginConstructorAPI extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance = this;
+		
+		Plugin thi = this;
+		
+		
+		//RGBBlockColor.printOutLineFor(doorAc, Material.ACACIA_DOOR, 0);
 
-		//If there was no update for github, check bukkitdev.
-		if (! GithubUpdater.autoUpdate(this, "ZombieStriker", "PluginConstructorAPI", "PluginConstructorAPI.jar"))
-			new Updater(this, 276723, getConfig().getBoolean("auto-update"));
+		// We are no longer using bukkitdev. Github should be the main updater
+		new BukkitRunnable() {
+			
+			@Override
+			public void run() {
+				if(GithubUpdater.autoUpdate(thi, "ZombieStriker", "PluginConstructorAPI", "PluginConstructorAPI.jar"))
+					cancel();
+			}
+		}.runTaskTimer(this, 1, 20*60*60*24);
+		// new Updater(this, 276723, getConfig().getBoolean("auto-update"));
 
 		Metrics met = new Metrics(this);
+		shopcheck();
 	}
 
 	@Override
@@ -91,6 +106,19 @@ public class PluginConstructorAPI extends JavaPlugin {
 	public void sendHelp(CommandSender sender) {
 		sender.sendMessage("---===+ PluginConstructorAPI +===---");
 		sender.sendMessage("/PCAPI shop: Access all plugins that the server can download");
+	}
+
+	private void shopcheck() {
+		int k = 0;
+		for (int i : shop.getAllPluginsIDS()) {
+			k++;
+			new BukkitRunnable() {
+				@Override
+				public void run() {
+					shop.pingSite(i);
+				}
+			}.runTaskTimer(PluginConstructorAPI.instance, (36 * 60 * 10) + (k * 40), 12 * 60 * 10);
+		}
 	}
 
 	@SuppressWarnings("deprecation")

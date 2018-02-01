@@ -1,3 +1,28 @@
+1.0.24
+	Added doors to RGB blockcolor
+
+1.0.23
+	Added auto-Updater timer. Now it wil lcheck every 24 hours
+
+1.0.21
+	fixed Timing
+
+1.0.20
+	Stuff
+
+1.0.19
+	Added support to limit which materials are used.
+
+1.0.18
+	Fixed HotbarMessager
+
+1.0.17
+	Added Github Updater
+	Removed bukkit system for updating. This should be I no longer need to rely on a system waiting days for the new update to be downloaded to users
+	
+1.0.16
+	-Test update
+
 1.0.15
 	Added /pluginConstructorAPI or /pcapi
 	Added a shop sub-command
@@ -54,4 +79,5 @@
  	
 1.0.0
 	init post
+
 

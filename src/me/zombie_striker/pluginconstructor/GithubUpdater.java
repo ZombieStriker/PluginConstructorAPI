@@ -58,11 +58,11 @@ public class GithubUpdater {
 
 			int latestVersion = Integer.valueOf(parsedTagName.substring(1, parsedTagName.length()));
 
-			URL download = new URL("https://github.com/" + author + "/" + githubProject + "/releases/download/"
+			final URL download = new URL("https://github.com/" + author + "/" + githubProject + "/releases/download/"
 					+ tagname + "/" + jarname);
 
 			if (latestVersion > Integer.parseInt(parseVersion)) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[COD] Found a new version " + ChatColor.RED
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Found a new version " + ChatColor.WHITE
 						+ tagname + ChatColor.LIGHT_PURPLE + " downloading now!!");
 
 				new BukkitRunnable() {
@@ -77,7 +77,7 @@ public class GithubUpdater {
 
 							try {
 								pluginFile = new File(URLDecoder.decode(
-										main.getClass().getProtectionDomain().getCodeSource().getLocation().getPath(),
+										this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath(),
 										"UTF-8"));
 							} catch (UnsupportedEncodingException e) {
 								throw new RuntimeException("You don't have a good text codec on your system", e);
@@ -90,7 +90,9 @@ public class GithubUpdater {
 
 							// Path path = new File("plugins/update" + File.separator + "COD.jar").toPath();
 							pluginFile.setWritable(true, false);
-							Files.copy(in, pluginFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+							pluginFile.delete();
+							//Files.copy(in, pluginFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+							copy(in, new FileOutputStream(pluginFile));
 
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -104,5 +106,21 @@ public class GithubUpdater {
 		}
 		return false;
 	}
+    private static long copy(InputStream in, OutputStream out) throws IOException {
+        long bytes = 0;
+        byte[] buf = new byte[0x1000];
+        while (true) {
+            int r = in.read(buf);
+            if (r == -1)
+                break;
+            out.write(buf, 0, r);
+            bytes += r;
+           // debug("Another 4K, current: " + r);
+        }
+        out.flush();
+        out.close();
+        in.close();
+        return bytes;
+    }
 
 }

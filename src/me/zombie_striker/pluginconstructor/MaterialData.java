@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 
@@ -11,17 +12,29 @@ public class MaterialData implements ConfigurationSerializable {
 
 	private Material m;
 	private byte data;
+	
+	private BlockFace direction = null;
+	
+	public boolean hasDirection() {
+		return direction !=null;
+	}
+	public BlockFace getDirection() {
+		return direction;
+	}
 
-	public MaterialData(Material m, byte data) {
+	public MaterialData(Material m, byte data, BlockFace direction) {
 		ConfigurationSerialization.registerClass(MaterialData.class);
 		this.setMaterial(m);
 		this.data = data;
+		this.direction = direction;
+		
+	}
+	public MaterialData(Material m, byte data) {
+		this(m,data,null);
 	}
 
 	public MaterialData(Material m) {
-		ConfigurationSerialization.registerClass(MaterialData.class);
-		this.setMaterial(m);
-		this.data = 0;
+		this(m,((byte)0),null);
 	}
 
 	public static MaterialData getMatDataByTypes(Material mat, byte data) {
