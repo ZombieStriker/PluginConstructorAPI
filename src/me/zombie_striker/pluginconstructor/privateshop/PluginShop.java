@@ -65,6 +65,7 @@ public class PluginShop {
 		supportedPlugins.put("TimeZones", 91804);
 		supportedPlugins.put("UltimateHeadFinder", 92100);
 		supportedPlugins.put("WishingWells", 281062);
+		supportedPlugins.put("WorldChangeScreenRemover", 289776);
 	}
 
 	public Set<String> getAllPlugins() {

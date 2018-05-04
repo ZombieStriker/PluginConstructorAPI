@@ -235,7 +235,7 @@ public class RGBBlockColor {
 		new RGBBlockValue(new Color(21, 19, 31), new Color(21, 19, 31), new Color(20, 18, 29), new Color(20, 18, 30),
 				"OBSIDIAN");
 		new RGBBlockValue(new Color(120, 112, 97), new Color(113, 105, 91), new Color(99, 99, 99),
-				new Color(94, 94, 94), "PISTON_BASE");
+				new Color(94, 94, 94), "PISTON_BASE", 1);
 		new RGBBlockValue(new Color(170, 92, 51), new Color(170, 92, 51), new Color(171, 93, 52),
 				new Color(170, 92, 51), "WOOD", 4);
 		new RGBBlockValue(new Color(61, 40, 19), new Color(61, 40, 19), new Color(62, 40, 19), new Color(61, 40, 19),
@@ -391,17 +391,61 @@ public class RGBBlockColor {
 					new Color(249, 198, 40), "WOOL", 4);
 		}
 		try {
-			//Attempts to add doors.
-			// new RGBBlockValue(new Color(157,90,56),new Color(153,87,55),new Color(156,90,55),new Color(157,88,55),"ACACIA_DOOR",0,BlockFace.EAST);
-			//TOO MANY SPACE
-			new RGBBlockValue(new Color(217,207,162),new Color(214,205,162),new Color(196,184,124),new Color(194,181,123),"BIRCH_DOOR",0,BlockFace.EAST);
-			 new RGBBlockValue(new Color(69,47,26),new Color(65,43,21),new Color(68,46,27),new Color(64,42,22),"DARK_OAK_DOOR",0,BlockFace.EAST);
-			new RGBBlockValue(new Color(190,190,190),new Color(179,179,179),new Color(146,146,146),new Color(141,141,141),"IRON_DOOR_BLOCK",0,BlockFace.EAST);
-			new RGBBlockValue(new Color(157,115,83),new Color(155,113,81),new Color(148,107,78),new Color(146,106,76),"JUNGLE_DOOR",0,BlockFace.EAST);
-			 new RGBBlockValue(new Color(102,77,49),new Color(102,81,56),new Color(94,74,49),new Color(93,72,46),"SPRUCE_DOOR",0,BlockFace.EAST);
-			 new RGBBlockValue(new Color(142,109,55),new Color(134,101,50),new Color(134,103,53),new Color(128,95,47),"WOODEN_DOOR",0,BlockFace.EAST);
-		}catch(Exception|Error e4) {
-			
+			// Attempts to add doors.
+			// new RGBBlockValue(new Color(157,90,56),new Color(153,87,55),new
+			// Color(156,90,55),new Color(157,88,55),"ACACIA_DOOR",0,BlockFace.EAST);
+			// TOO MANY SPACE
+			/*
+			 * new RGBBlockValue(new Color(217, 207, 162), new Color(214, 205, 162), new
+			 * Color(196, 184, 124), new Color(194, 181, 123), "BIRCH_DOOR", 0,
+			 * BlockFace.EAST); new RGBBlockValue(new Color(69, 47, 26), new Color(65, 43,
+			 * 21), new Color(68, 46, 27), new Color(64, 42, 22), "DARK_OAK_DOOR", 0,
+			 * BlockFace.EAST); new RGBBlockValue(new Color(190, 190, 190), new Color(179,
+			 * 179, 179), new Color(146, 146, 146), new Color(141, 141, 141),
+			 * "IRON_DOOR_BLOCK", 0, BlockFace.EAST); new RGBBlockValue(new Color(157, 115,
+			 * 83), new Color(155, 113, 81), new Color(148, 107, 78), new Color(146, 106,
+			 * 76), "JUNGLE_DOOR", 0, BlockFace.EAST); new RGBBlockValue(new Color(102, 77,
+			 * 49), new Color(102, 81, 56), new Color(94, 74, 49), new Color(93, 72, 46),
+			 * "SPRUCE_DOOR", 0, BlockFace.EAST); new RGBBlockValue(new Color(142, 109, 55),
+			 * new Color(134, 101, 50), new Color(134, 103, 53), new Color(128, 95, 47),
+			 * "WOODEN_DOOR", 0, BlockFace.EAST);
+			 */
+			// Can't do doors, as they break when there is more than 2 stack above
+			// eachother.
+		} catch (Exception | Error e4) {
+
+		}
+		{
+
+			new RGBBlockValue(new Color(71, 71, 71), new Color(73, 73, 73), new Color(83, 83, 83),
+					new Color(86, 86, 86), "FURNACE", 0, BlockFace.EAST);
+			new RGBBlockValue(new Color(71, 71, 71), new Color(73, 73, 73), new Color(179, 135, 99),
+					new Color(178, 131, 98), "BURNING_FURNACE", 0, BlockFace.EAST);
+			new RGBBlockValue(new Color(68, 66, 66), new Color(69, 67, 67), new Color(69, 67, 67),
+					new Color(70, 68, 68), "OBSERVER", 0, BlockFace.WEST);
+			new RGBBlockValue(new Color(91, 90, 90), new Color(88, 87, 87), new Color(117, 117, 117),
+					new Color(115, 115, 115), "OBSERVER", 0, BlockFace.EAST);
+
+			new RGBBlockValue(new Color(62, 60, 60), new Color(64, 62, 62), new Color(63, 61, 61),
+					new Color(63, 62, 62), "OBSERVER", 0, BlockFace.NORTH);
+
+			// new RGBBlockValue(new Color(103, 103, 103), new Color(93, 93, 93), new
+			// Color(105, 105, 105),
+			// new Color(89, 89, 89), "OBSERVER", 0,BlockFace.UP);
+
+			new RGBBlockValue(new Color(150, 84, 16), new Color(142, 77, 12), new Color(141, 76, 11),
+					new Color(137, 73, 12), "PUMPKIN", 0, BlockFace.EAST);
+			new RGBBlockValue(new Color(187, 135, 31), new Color(187, 135, 29), new Color(181, 125, 25),
+					new Color(188, 140, 30), "JACK_O_LANTERN", 0, BlockFace.EAST);
+			new RGBBlockValue(new Color(203, 126, 27), new Color(195, 119, 23), new Color(195, 118, 21),
+					new Color(199, 122, 24), "PUMPKIN", 0, BlockFace.WEST);
+			new RGBBlockValue(new Color(152, 129, 89), new Color(155, 131, 92), new Color(154, 130, 89),
+					new Color(156, 131, 91), "PISTON_BASE", 0, BlockFace.UP);
+			new RGBBlockValue(new Color(139, 144, 99), new Color(143, 146, 101), new Color(143, 150, 102),
+					new Color(145, 146, 100), "PISTON_STICKY_BASE", 0, BlockFace.UP);
+			new RGBBlockValue(new Color(96, 96, 96), new Color(96, 96, 96), new Color(98, 98, 98),
+					new Color(96, 96, 96), "PISTON_BASE", 0, BlockFace.WEST);
+
 		}
 
 		// TODO: Due to 1.12s change to remove 'all bark' logs, changing all
@@ -427,6 +471,7 @@ public class RGBBlockColor {
 		 */
 
 	}
+
 	public static void printOutLineFor(File texture, Material material, int data) {
 		if (texture.getName().endsWith("png") || texture.getName().endsWith("jpg")) {
 			try {
@@ -437,11 +482,14 @@ public class RGBBlockColor {
 				Pixel[][] pixels = convertTo2DWithoutUsingGetRGB(bi);
 				MaterialData md = new MaterialData(material, (byte) data);
 
-				Bukkit.getLogger().info(
-					"new RGBBlockValue(new Color("+pixels[0][0].r+","+ pixels[0][0].g+","+  pixels[0][0].b+"),new Color("+pixels[0][1].r+","+  pixels[0][1].g+","+  pixels[0][1].b+"),new Color("+pixels[1][0].r+","+  pixels[1][0].g+","+  pixels[1][0].b+"),new Color("+pixels[1][1].r+","+  pixels[1][1].g+","+  pixels[1][1].b+"),\""+ md.getMaterial().name()+"\","+ 
-							md.getData()+","+  false+");");
+				Bukkit.getLogger().info("new RGBBlockValue(new Color(" + pixels[0][0].r + "," + pixels[0][0].g + ","
+						+ pixels[0][0].b + "),new Color(" + pixels[0][1].r + "," + pixels[0][1].g + "," + pixels[0][1].b
+						+ "),new Color(" + pixels[1][0].r + "," + pixels[1][0].g + "," + pixels[1][0].b + "),new Color("
+						+ pixels[1][1].r + "," + pixels[1][1].g + "," + pixels[1][1].b + "),\""
+						+ md.getMaterial().name() + "\"," + md.getData() + "," + false + ");");
 			} catch (IOException e) {
-				System.out.println("File " + texture.getName() + " was not an image. Remove this file from the folder.");
+				System.out
+						.println("File " + texture.getName() + " was not an image. Remove this file from the folder.");
 			}
 		}
 	}
@@ -457,10 +505,18 @@ public class RGBBlockColor {
 					Pixel[][] pixels = convertTo2DWithoutUsingGetRGB(bi);
 					MaterialData md = FileNameToMaterialUtil
 							.getMaterialData(f.getName().substring(0, f.getName().length() - 4));
+
 					if (md == null) {
 						// System.out.println("dead bug!");
 						continue;
 					}
+					Bukkit.getConsoleSender()
+							.sendMessage(("new RGBBlockValue(new Color(" + pixels[0][0].r + ", " + pixels[0][0].g + ", "
+									+ pixels[0][0].b + ")," + "new Color(" + pixels[0][1].r + ", " + pixels[0][1].g
+									+ ", " + pixels[0][1].b + ")," + "new Color(" + pixels[1][0].r + ", "
+									+ pixels[1][0].g + ", " + pixels[1][0].b + ")," + "new Color(" + pixels[1][1].r
+									+ ", " + pixels[1][1].g + ", " + pixels[1][1].b + "), \"" + md.getMaterial().name()
+									+ "\"," + "								" + md.getData() + ");"));
 					boolean needsFalse = false;
 					if (MaterialData.getMatDataByTypes(md.getMaterial(), md.getData()) != null) {
 						MaterialData existing = MaterialData.getMatDataByTypes(md.getMaterial(), md.getData());
@@ -478,14 +534,14 @@ public class RGBBlockColor {
 								new Color(pixels[0][1].r, pixels[0][1].g, pixels[0][1].b),
 								new Color(pixels[1][0].r, pixels[1][0].g, pixels[1][0].b),
 								new Color(pixels[1][1].r, pixels[1][1].g, pixels[1][1].b), md.getMaterial().name(),
-								md.getData(), false);
+								md.getData(), false,md.getDirection());
 
 					} else {
 						new RGBBlockValue(new Color(pixels[0][0].r, pixels[0][0].g, pixels[0][0].b),
 								new Color(pixels[0][1].r, pixels[0][1].g, pixels[0][1].b),
 								new Color(pixels[1][0].r, pixels[1][0].g, pixels[1][0].b),
 								new Color(pixels[1][1].r, pixels[1][1].g, pixels[1][1].b), md.getMaterial().name(),
-								md.getData());
+								md.getData(),md.getDirection());
 					}
 				} catch (IOException e) {
 					System.out.println("File " + f.getName() + " was not an image. Remove this file from the folder.");
@@ -636,8 +692,9 @@ public class RGBBlockColor {
 	 * @return The closest material and durability.
 	 */
 	public static MaterialData getClosestBlockValue(Color c[], boolean topView, boolean supportTransparent) {
-		return getClosestBlockValue(c, topView, supportTransparent,null);
+		return getClosestBlockValue(c, topView, supportTransparent, null);
 	}
+
 	/**
 	 * The color value of the four closest colors. Use this if you want to preserve
 	 * hard edges in images. For the array, you need four color values. Use the
@@ -651,7 +708,8 @@ public class RGBBlockColor {
 	 *            - The color value
 	 * @return The closest material and durability.
 	 */
-	public static MaterialData getClosestBlockValue(Color c[], boolean topView, boolean supportTransparent, Material[] supportedMaterials) {
+	public static MaterialData getClosestBlockValue(Color c[], boolean topView, boolean supportTransparent,
+			Material[] supportedMaterials) {
 
 		int[] r = new int[4];
 		int[] b = new int[4];
@@ -680,14 +738,14 @@ public class RGBBlockColor {
 		double[] tG = new double[4];
 		double[] tB = new double[4];
 		for (Entry<MaterialData, RGBBlockValue> entry : materialValue.entrySet()) {
-			if(supportedMaterials!=null) {
+			if (supportedMaterials != null) {
 				boolean good = false;
-				for(Material k : supportedMaterials)
-					if(k==entry.getKey().getMaterial()){
+				for (Material k : supportedMaterials)
+					if (k == entry.getKey().getMaterial()) {
 						good = true;
 						break;
 					}
-				if(!good)
+				if (!good)
 					continue;
 			}
 			for (int i = 0; i < 4; i++) {
@@ -1103,17 +1161,20 @@ class RGBBlockValue extends RGBValue {
 	}
 
 	public RGBBlockValue(Color c, Color c2, Color c3, Color c4, String mat, int d, boolean isTop) {
+		this(c,c2,c3,c4,mat,d,isTop,null);
+	}
+	public RGBBlockValue(Color c, Color c2, Color c3, Color c4, String mat, int d, boolean isTop, BlockFace face) {
 		super(c, c2, c3, c4);
 		if (Material.matchMaterial(mat) == null)
 			return;
 		this.hasFaces = true;
 		this.isTop = isTop;
-		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) d), this);
+		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) d,face), this);
 	}
+
 	/**
 	 * Door variables
 	 */
-
 
 	public RGBBlockValue(Color c, Color c2, Color c3, Color c4, String mat, int d, BlockFace direction) {
 		super(c, c2, c3, c4);
@@ -1121,7 +1182,7 @@ class RGBBlockValue extends RGBValue {
 			return;
 		this.hasFaces = true;
 		this.isTop = false;
-		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) d,direction), this);
+		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) d, direction), this);
 	}
 
 	public RGBBlockValue(Color c, Color c2, Color c3, Color c4, String mat, BlockFace direction) {
@@ -1130,9 +1191,9 @@ class RGBBlockValue extends RGBValue {
 			return;
 		this.hasFaces = true;
 		this.isTop = false;
-		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) 0,direction), this);
+		RGBBlockColor.materialValue.put(new MaterialData(Material.matchMaterial(mat), (byte) 0, direction), this);
 	}
-	
+
 	public RGBBlockValue(Color c, String mat, boolean isTop) {
 		super(c);
 		if (Material.matchMaterial(mat) == null)
