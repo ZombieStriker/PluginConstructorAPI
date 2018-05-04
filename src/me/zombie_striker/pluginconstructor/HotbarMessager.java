@@ -1,6 +1,7 @@
 package me.zombie_striker.pluginconstructor;
 
 import java.lang.reflect.*;
+import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -70,8 +71,9 @@ public class HotbarMessager {
 	 *
 	 * @param player
 	 * @param message
+	 * @throws Exception 
 	 */
-	public static void sendHotBarMessage(Player player, String message) {
+	public static void sendHotBarMessage(Player player, String message) throws Exception {
 		try {
 			// This creates the IChatComponentBase instance
 			Object icb = CHATMESSAGE_CONSTRUCTOR.newInstance(message, new Object[0]);
@@ -84,14 +86,32 @@ public class HotbarMessager {
 			}
 			// This casts the player to a craftplayer
 			Object craftplayerInst = CRAFTPLAYERCLASS.cast(player);
+			if(craftplayerInst == null) {
+				failsafe("Craftplayer");
+				return;
+			}
 			// This invokes the method above.
 			Object methodhHandle = GETHANDLE.invoke(craftplayerInst);
+			if(methodhHandle == null) {
+				failsafe("Handle");
+				return;
+			}
 			// This gets the player's connection
 			Object playerConnection = PLAYERCONNECTION.get(methodhHandle);
+			if(playerConnection == null) {
+				failsafe("Connection");
+				return;
+			}
 			// This sends the packet.
 			SENDPACKET.invoke(playerConnection, packet);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw e;
 		}
+	}
+	private static void failsafe(String message) {
+		Bukkit.getLogger().log(Level.WARNING, "[PluginConstructorAPI] HotBarMessager disabled! Something went wrong with: "+message);
+		Bukkit.getLogger().log(Level.WARNING, "[PluginConstructorAPI] Report this to Zombie_Striker");
+		Bukkit.getLogger().log(Level.WARNING, "[PluginConstructorAPI] Needed Information: "+Bukkit.getName()+", "+Bukkit.getVersion()+", "+Bukkit.getBukkitVersion());
+		Bukkit.getLogger().log(Level.WARNING, "[PluginConstructorAPI] https://github.com/ZombieStriker/PluginConstructorAPI");
 	}
 }

@@ -4,7 +4,6 @@ import java.io.File;
 import java.lang.reflect.Field;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
@@ -39,8 +38,8 @@ public class PluginConstructorAPI extends JavaPlugin {
 		}.runTaskTimer(this, 1, 20*60*60*24);
 		// new Updater(this, 276723, getConfig().getBoolean("auto-update"));
 
-		Metrics met = new Metrics(this);
-		shopcheck();
+		/*Metrics met =*/ new Metrics(this);
+		//shopcheck();
 	}
 
 	@Override
@@ -117,7 +116,7 @@ public class PluginConstructorAPI extends JavaPlugin {
 				public void run() {
 					shop.pingSite(i);
 				}
-			}.runTaskTimer(PluginConstructorAPI.instance, (36 * 60 * 10) + (k * 40), 12 * 60 * 10);
+			}.runTaskTimerAsynchronously(PluginConstructorAPI.instance, (15 * 60 * 20) + (k * 40), 30 * 60 * 20);
 		}
 	}
 
