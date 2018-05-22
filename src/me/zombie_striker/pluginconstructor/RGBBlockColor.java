@@ -304,117 +304,215 @@ public class RGBBlockColor {
 		 * 
 		 * 
 		 */
-		
-		new RGBBlockValue(new Color(154, 91, 64),new Color(154, 92, 65),new Color(155, 93, 65),new Color(155, 92, 65), "LOG_2",12);
-		new RGBBlockValue(new Color(129, 130, 130),new Color(134, 134, 134),new Color(131, 131, 131),new Color(131, 131, 132), "STONE",5);
-		new RGBBlockValue(new Color(123, 224, 218),new Color(117, 222, 216),new Color(117, 223, 217),new Color(111, 219, 214), "BEACON",0);
-		new RGBBlockValue(new Color(86, 86, 86),new Color(76, 76, 76),new Color(81, 81, 81),new Color(94, 94, 94), "BEDROCK",0);
-		new RGBBlockValue(new Color(188, 170, 125),new Color(178, 160, 115),new Color(181, 163, 119),new Color(193, 174, 130), "LOG",14);
-		new RGBBlockValue(new Color(88, 37, 40),new Color(65, 22, 23),new Color(64, 22, 23),new Color(55, 41, 44), "BLACK_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(49, 69, 143),new Color(47, 61, 134),new Color(46, 61, 135),new Color(50, 70, 147), "BLUE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(225, 221, 201),new Color(225, 221, 200),new Color(225, 221, 201),new Color(225, 221, 201), "BONE_BLOCK",0);
-		new RGBBlockValue(new Color(108, 96, 69),new Color(116, 71, 42),new Color(107, 90, 49),new Color(102, 98, 71), "BOOKSHELF",0);
-		new RGBBlockValue(new Color(146, 100, 87),new Color(147, 100, 87),new Color(147, 101, 88),new Color(148, 101, 88), "BRICK",0);
-		new RGBBlockValue(new Color(149, 103, 65),new Color(114, 111, 97),new Color(114, 111, 97),new Color(104, 102, 86), "BROWN_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(130, 165, 151),new Color(130, 161, 148),new Color(130, 160, 147),new Color(130, 154, 142), "COMMAND_CHAIN",0);
-		new RGBBlockValue(new Color(136, 106, 136),new Color(138, 108, 138),new Color(134, 104, 134),new Color(129, 97, 129), "CHORUS_FLOWER",0);
-		new RGBBlockValue(new Color(159, 165, 177),new Color(159, 165, 177),new Color(159, 165, 177),new Color(159, 165, 177), "CLAY",0);
-		new RGBBlockValue(new Color(20, 20, 20),new Color(18, 18, 18),new Color(22, 22, 22),new Color(17, 17, 17), "COAL_BLOCK",0);
-		new RGBBlockValue(new Color(117, 117, 117),new Color(117, 117, 117),new Color(117, 117, 117),new Color(113, 113, 113), "COAL_ORE",0);
-		new RGBBlockValue(new Color(125, 125, 125),new Color(123, 123, 123),new Color(122, 122, 122),new Color(124, 124, 124), "COBBLESTONE",0);
-		new RGBBlockValue(new Color(178, 135, 108),new Color(174, 134, 109),new Color(173, 133, 109),new Color(166, 129, 109), "COMMAND",0);
-		new RGBBlockValue(new Color(114, 91, 56),new Color(118, 98, 66),new Color(110, 91, 63),new Color(121, 103, 73), "WORKBENCH",0);
-		new RGBBlockValue(new Color(61, 130, 133),new Color(56, 101, 111),new Color(34, 112, 122),new Color(59, 133, 137), "CYAN_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(78, 62, 41),new Color(79, 63, 41),new Color(79, 63, 42),new Color(79, 63, 42), "LOG",12);
-		new RGBBlockValue(new Color(128, 85, 32),new Color(131, 86, 32),new Color(120, 77, 24),new Color(120, 76, 25), "DEAD_BUSH",0);
-		new RGBBlockValue(new Color(102, 219, 214),new Color(117, 225, 220),new Color(98, 220, 215),new Color(75, 214, 207), "DIAMOND_BLOCK",0);
-		new RGBBlockValue(new Color(132, 140, 144),new Color(126, 132, 135),new Color(127, 135, 138),new Color(133, 154, 158), "DIAMOND_ORE",0);
-		new RGBBlockValue(new Color(179, 179, 181),new Color(180, 180, 183),new Color(179, 179, 181),new Color(183, 183, 186), "STONE",3);
-		new RGBBlockValue(new Color(136, 98, 69),new Color(133, 96, 66),new Color(134, 96, 66),new Color(135, 98, 68), "DIRT",0);
-		new RGBBlockValue(new Color(104, 231, 139),new Color(82, 220, 119),new Color(75, 216, 112),new Color(65, 203, 100), "EMERALD_BLOCK",0);
-		new RGBBlockValue(new Color(107, 133, 116),new Color(111, 131, 118),new Color(116, 124, 119),new Color(106, 128, 114), "EMERALD_ORE",0);
-		new RGBBlockValue(new Color(220, 223, 164),new Color(222, 225, 166),new Color(223, 225, 167),new Color(221, 224, 165), "ENDER_STONE",0);
-		new RGBBlockValue(new Color(127, 175, 255),new Color(122, 172, 255),new Color(125, 173, 255),new Color(128, 175, 255), "PACKED_ICE",0);
-		new RGBBlockValue(new Color(71, 71, 71),new Color(83, 83, 83),new Color(73, 73, 73),new Color(86, 86, 86), "FURNACE",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(71, 71, 71),new Color(179, 135, 99),new Color(73, 73, 73),new Color(178, 131, 98), "BURNING_FURNACE",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(96, 96, 96),new Color(133, 133, 133),new Color(96, 96, 96),new Color(130, 130, 130), "FURNACE",0);
-		new RGBBlockValue(new Color(150, 122, 74),new Color(144, 120, 72),new Color(149, 123, 72),new Color(133, 109, 62), "GLOWSTONE",0);
-		new RGBBlockValue(new Color(248, 238, 80),new Color(251, 242, 92),new Color(249, 239, 73),new Color(250, 228, 71), "GOLD_BLOCK",0);
-		new RGBBlockValue(new Color(144, 142, 129),new Color(135, 133, 123),new Color(138, 135, 124),new Color(158, 150, 126), "GOLD_ORE",0);
-		new RGBBlockValue(new Color(144, 144, 144),new Color(132, 132, 132),new Color(142, 142, 142),new Color(131, 131, 131), "GRASS",0);
-		new RGBBlockValue(new Color(128, 125, 123),new Color(130, 127, 126),new Color(127, 124, 123),new Color(125, 122, 120), "GRAVEL",0);
-		new RGBBlockValue(new Color(89, 96, 99),new Color(79, 88, 92),new Color(72, 81, 85),new Color(94, 98, 101), "GRAY_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(146, 162, 120),new Color(108, 138, 49),new Color(108, 138, 48),new Color(107, 133, 54), "GREEN_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(158, 116, 18),new Color(157, 118, 19),new Color(160, 117, 18),new Color(158, 117, 19), "HAY_BLOCK",0);
-		new RGBBlockValue(new Color(222, 222, 222),new Color(222, 222, 222),new Color(218, 218, 218),new Color(217, 217, 217), "IRON_BLOCK",0);
-		new RGBBlockValue(new Color(137, 132, 128),new Color(130, 127, 124),new Color(132, 128, 126),new Color(145, 136, 131), "IRON_ORE",0);
-		new RGBBlockValue(new Color(156, 120, 74),new Color(153, 119, 73),new Color(154, 119, 74),new Color(154, 119, 74), "LOG",15);
-		new RGBBlockValue(new Color(40, 76, 151),new Color(40, 65, 137),new Color(38, 67, 138),new Color(39, 62, 126), "LAPIS_BLOCK",0);
-		new RGBBlockValue(new Color(104, 115, 139),new Color(100, 109, 132),new Color(114, 118, 129),new Color(93, 107, 139), "LAPIS_ORE",0);
-		new RGBBlockValue(new Color(69, 140, 196),new Color(96, 152, 202),new Color(98, 169, 211),new Color(117, 200, 228), "LIGHT_BLUE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(163, 172, 175),new Color(108, 157, 159),new Color(142, 162, 164),new Color(166, 175, 177), "WHITE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(138, 196, 48),new Color(180, 199, 62),new Color(179, 198, 60),new Color(156, 199, 52), "LIME_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(205, 97, 187),new Color(212, 103, 196),new Color(205, 98, 188),new Color(213, 105, 198), "MAGENTA_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(137, 67, 25),new Color(140, 68, 25),new Color(128, 62, 26),new Color(136, 66, 26), "MAGMA",0);
-		new RGBBlockValue(new Color(138, 144, 35),new Color(143, 148, 37),new Color(143, 147, 37),new Color(144, 147, 37), "MELON_BLOCK",0);
-		new RGBBlockValue(new Color(165, 165, 165),new Color(184, 184, 184),new Color(128, 128, 128),new Color(128, 128, 128), "MELON_STEM",0);
-		new RGBBlockValue(new Color(104, 124, 104),new Color(106, 122, 106),new Color(104, 121, 104),new Color(103, 121, 103), "MOSSY_COBBLESTONE",0);
-		new RGBBlockValue(new Color(101, 88, 89),new Color(131, 95, 67),new Color(97, 80, 76),new Color(127, 92, 65), "MYCEL",0);
-		new RGBBlockValue(new Color(118, 61, 59),new Color(108, 50, 49),new Color(108, 50, 49),new Color(112, 57, 54), "NETHERRACK",0);
-		new RGBBlockValue(new Color(46, 23, 27),new Color(45, 23, 27),new Color(45, 23, 27),new Color(44, 23, 27), "NETHER_BRICK",0);
-		new RGBBlockValue(new Color(117, 7, 8),new Color(115, 6, 7),new Color(120, 8, 8),new Color(119, 7, 7), "NETHER_WART_BLOCK",0);
-		new RGBBlockValue(new Color(101, 67, 50),new Color(102, 69, 52),new Color(101, 68, 51),new Color(101, 68, 51), "NOTE_BLOCK",0);
-		new RGBBlockValue(new Color(154, 124, 77),new Color(155, 125, 77),new Color(157, 127, 78),new Color(156, 126, 78), "LOG",12);
-		new RGBBlockValue(new Color(68, 66, 66),new Color(69, 67, 67),new Color(69, 67, 67),new Color(70, 68, 68), "OBSERVER",0,BlockFace.WEST);
-		new RGBBlockValue(new Color(91, 90, 90),new Color(117, 117, 117),new Color(88, 87, 87),new Color(115, 115, 115), "OBSERVER",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(62, 60, 60),new Color(63, 61, 61),new Color(64, 62, 62),new Color(63, 62, 62), "OBSERVER",0,BlockFace.NORTH);
-		new RGBBlockValue(new Color(21, 19, 31),new Color(20, 18, 29),new Color(21, 19, 31),new Color(20, 18, 30), "OBSIDIAN",0);
-		new RGBBlockValue(new Color(190, 152, 78),new Color(164, 134, 75),new Color(164, 138, 77),new Color(102, 168, 140), "ORANGE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(167, 196, 246),new Color(164, 193, 245),new Color(164, 193, 244),new Color(168, 197, 249), "PACKED_ICE",0);
-		new RGBBlockValue(new Color(232, 155, 180),new Color(239, 153, 182),new Color(239, 157, 185),new Color(232, 155, 181), "PINK_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(96, 96, 96),new Color(98, 98, 98),new Color(96, 96, 96),new Color(96, 96, 96), "PISTON_BASE",0,BlockFace.WEST);
-		new RGBBlockValue(new Color(120, 112, 97),new Color(99, 99, 99),new Color(113, 105, 91),new Color(94, 94, 94), "PISTON_BASE",0);
-		new RGBBlockValue(new Color(152, 129, 89),new Color(154, 130, 89),new Color(155, 131, 92),new Color(156, 131, 91), "PISTON_BASE",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(139, 144, 99),new Color(143, 150, 102),new Color(143, 146, 101),new Color(145, 146, 100), "PISTON_STICKY_BASE",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(92, 15, 194),new Color(94, 15, 196),new Color(86, 9, 190),new Color(95, 16, 196), "PORTAL",0);
-		new RGBBlockValue(new Color(105, 169, 148),new Color(105, 168, 149),new Color(110, 172, 151),new Color(109, 173, 157), "PRISMARINE",0);
-		new RGBBlockValue(new Color(103, 163, 146),new Color(101, 161, 143),new Color(103, 163, 145),new Color(95, 155, 140), "PRISMARINE",1);
-		new RGBBlockValue(new Color(150, 84, 16),new Color(141, 76, 11),new Color(142, 77, 12),new Color(137, 73, 12), "PUMPKIN",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(187, 135, 31),new Color(181, 125, 25),new Color(187, 135, 29),new Color(188, 140, 30), "JACK_O_LANTERN",0,BlockFace.EAST);
-		new RGBBlockValue(new Color(203, 126, 27),new Color(195, 118, 21),new Color(195, 119, 23),new Color(199, 122, 24), "PUMPKIN",0,BlockFace.WEST);
-		new RGBBlockValue(new Color(165, 165, 165),new Color(184, 184, 184),new Color(128, 128, 128),new Color(128, 128, 128), "PUMPKIN_STEM",0);
-		new RGBBlockValue(new Color(124, 63, 167),new Color(102, 44, 141),new Color(102, 44, 142),new Color(113, 43, 161), "PURPLE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(167, 122, 167),new Color(168, 124, 168),new Color(165, 121, 165),new Color(168, 123, 168), "PURPUR_BLOCK",0);
-		new RGBBlockValue(new Color(170, 127, 170),new Color(171, 127, 171),new Color(170, 127, 170),new Color(171, 127, 171), "PURPUR_PILLAR",0);
-		new RGBBlockValue(new Color(238, 236, 229),new Color(236, 233, 226),new Color(237, 234, 227),new Color(234, 231, 224), "QUARTZ_BLOCK",0);
-		new RGBBlockValue(new Color(135, 97, 91),new Color(125, 82, 78),new Color(123, 84, 79),new Color(119, 77, 73), "QUARTZ_ORE",0);
-		new RGBBlockValue(new Color(171, 28, 10),new Color(174, 28, 10),new Color(171, 28, 10),new Color(171, 28, 10), "REDSTONE_BLOCK",0);
-		new RGBBlockValue(new Color(71, 44, 27),new Color(67, 42, 26),new Color(70, 43, 27),new Color(75, 47, 29), "REDSTONE_LAMP_OFF",0);
-		new RGBBlockValue(new Color(121, 91, 56),new Color(114, 84, 50),new Color(118, 89, 56),new Color(126, 94, 59), "REDSTONE_LAMP_ON",0);
-		new RGBBlockValue(new Color(134, 109, 109),new Color(129, 112, 112),new Color(130, 111, 111),new Color(139, 100, 100), "REDSTONE_ORE",0);
-		new RGBBlockValue(new Color(96, 0, 0),new Color(135, 112, 64),new Color(64, 0, 0),new Color(64, 48, 32), "REDSTONE_TORCH_OFF",0);
-		new RGBBlockValue(new Color(169, 47, 43),new Color(192, 70, 61),new Color(177, 54, 49),new Color(192, 70, 61), "RED_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(70, 5, 7),new Color(71, 4, 6),new Color(67, 6, 9),new Color(67, 4, 7), "RED_NETHER_BRICK",0);
-		new RGBBlockValue(new Color(167, 85, 30),new Color(166, 85, 30),new Color(167, 85, 30),new Color(165, 84, 30), "RED_SANDSTONE",0);
-		new RGBBlockValue(new Color(124, 107, 179),new Color(124, 108, 173),new Color(124, 107, 172),new Color(125, 109, 165), "COMMAND_REPEATING",0);
-		new RGBBlockValue(new Color(219, 212, 160),new Color(218, 210, 159),new Color(220, 213, 162),new Color(220, 212, 161), "SAND",0);
-		new RGBBlockValue(new Color(219, 211, 160),new Color(217, 210, 157),new Color(218, 210, 158),new Color(216, 209, 155), "SANDSTONE",0);
-		new RGBBlockValue(new Color(173, 201, 191),new Color(171, 199, 190),new Color(174, 201, 192),new Color(173, 201, 192), "SEA_LANTERN",0);
-		new RGBBlockValue(new Color(121, 201, 102),new Color(123, 202, 104),new Color(121, 201, 100),new Color(119, 198, 100), "SLIME_BLOCK",0);
-		new RGBBlockValue(new Color(243, 252, 252),new Color(239, 251, 251),new Color(240, 251, 251),new Color(240, 251, 251), "SNOW",0);
-		new RGBBlockValue(new Color(82, 62, 49),new Color(88, 68, 55),new Color(84, 64, 51),new Color(86, 65, 53), "SOUL_SAND",0);
-		new RGBBlockValue(new Color(194, 195, 84),new Color(195, 196, 85),new Color(197, 197, 86),new Color(195, 196, 86), "SPONGE",0);
-		new RGBBlockValue(new Color(104, 81, 48),new Color(105, 82, 48),new Color(106, 82, 49),new Color(106, 82, 49), "LOG",13);
-		new RGBBlockValue(new Color(125, 125, 125),new Color(125, 125, 125),new Color(125, 125, 125),new Color(128, 128, 128), "STONE",0);
-		new RGBBlockValue(new Color(155, 116, 101),new Color(151, 112, 97),new Color(153, 113, 97),new Color(156, 117, 101), "STONE",1);
-		new RGBBlockValue(new Color(171, 171, 171),new Color(170, 170, 170),new Color(163, 163, 163),new Color(165, 165, 165), "STONE",0);
-		new RGBBlockValue(new Color(160, 160, 160),new Color(159, 159, 159),new Color(159, 159, 159),new Color(162, 162, 162), "DOUBLE_STEP",8);
-		new RGBBlockValue(new Color(89, 74, 89),new Color(89, 74, 89),new Color(90, 76, 91),new Color(90, 75, 91), "STRUCTURE_BLOCK",0);
-		new RGBBlockValue(new Color(149, 195, 101),new Color(148, 193, 102),new Color(149, 193, 102),new Color(149, 193, 102), "SUGAR_CANE",0);
-		new RGBBlockValue(new Color(255, 255, 96),new Color(135, 112, 64),new Color(255, 191, 128),new Color(64, 48, 32), "TORCH",0);
-		new RGBBlockValue(new Color(237, 232, 178),new Color(194, 216, 207),new Color(194, 216, 208),new Color(131, 187, 220), "WHITE_GLAZED_TERRACOTTA",0);
-		new RGBBlockValue(new Color(251, 217, 114),new Color(241, 197, 81),new Color(240, 197, 82),new Color(206, 159, 79), "YELLOW_GLAZED_TERRACOTTA",0);
-		
+
+		new RGBBlockValue(new Color(154, 91, 64), new Color(154, 92, 65), new Color(155, 93, 65),
+				new Color(155, 92, 65), "LOG_2", 12);
+		new RGBBlockValue(new Color(129, 130, 130), new Color(134, 134, 134), new Color(131, 131, 131),
+				new Color(131, 131, 132), "STONE", 5);
+		new RGBBlockValue(new Color(123, 224, 218), new Color(117, 222, 216), new Color(117, 223, 217),
+				new Color(111, 219, 214), "BEACON", 0);
+		new RGBBlockValue(new Color(86, 86, 86), new Color(76, 76, 76), new Color(81, 81, 81), new Color(94, 94, 94),
+				"BEDROCK", 0);
+		new RGBBlockValue(new Color(188, 170, 125), new Color(178, 160, 115), new Color(181, 163, 119),
+				new Color(193, 174, 130), "LOG", 14);
+		new RGBBlockValue(new Color(88, 37, 40), new Color(65, 22, 23), new Color(64, 22, 23), new Color(55, 41, 44),
+				"BLACK_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(49, 69, 143), new Color(47, 61, 134), new Color(46, 61, 135),
+				new Color(50, 70, 147), "BLUE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(225, 221, 201), new Color(225, 221, 200), new Color(225, 221, 201),
+				new Color(225, 221, 201), "BONE_BLOCK", 0);
+		new RGBBlockValue(new Color(108, 96, 69), new Color(116, 71, 42), new Color(107, 90, 49),
+				new Color(102, 98, 71), "BOOKSHELF", 0);
+		new RGBBlockValue(new Color(146, 100, 87), new Color(147, 100, 87), new Color(147, 101, 88),
+				new Color(148, 101, 88), "BRICK", 0);
+		new RGBBlockValue(new Color(149, 103, 65), new Color(114, 111, 97), new Color(114, 111, 97),
+				new Color(104, 102, 86), "BROWN_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(130, 165, 151), new Color(130, 161, 148), new Color(130, 160, 147),
+				new Color(130, 154, 142), "COMMAND_CHAIN", 0);
+		new RGBBlockValue(new Color(159, 165, 177), new Color(159, 165, 177), new Color(159, 165, 177),
+				new Color(159, 165, 177), "CLAY", 0);
+		new RGBBlockValue(new Color(20, 20, 20), new Color(18, 18, 18), new Color(22, 22, 22), new Color(17, 17, 17),
+				"COAL_BLOCK", 0);
+		new RGBBlockValue(new Color(117, 117, 117), new Color(117, 117, 117), new Color(117, 117, 117),
+				new Color(113, 113, 113), "COAL_ORE", 0);
+		new RGBBlockValue(new Color(125, 125, 125), new Color(123, 123, 123), new Color(122, 122, 122),
+				new Color(124, 124, 124), "COBBLESTONE", 0);
+		new RGBBlockValue(new Color(178, 135, 108), new Color(174, 134, 109), new Color(173, 133, 109),
+				new Color(166, 129, 109), "COMMAND", 0);
+		new RGBBlockValue(new Color(114, 91, 56), new Color(118, 98, 66), new Color(110, 91, 63),
+				new Color(121, 103, 73), "WORKBENCH", 0);
+		new RGBBlockValue(new Color(61, 130, 133), new Color(56, 101, 111), new Color(34, 112, 122),
+				new Color(59, 133, 137), "CYAN_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(78, 62, 41), new Color(79, 63, 41), new Color(79, 63, 42), new Color(79, 63, 42),
+				"LOG", 12);
+		new RGBBlockValue(new Color(102, 219, 214), new Color(117, 225, 220), new Color(98, 220, 215),
+				new Color(75, 214, 207), "DIAMOND_BLOCK", 0);
+		new RGBBlockValue(new Color(132, 140, 144), new Color(126, 132, 135), new Color(127, 135, 138),
+				new Color(133, 154, 158), "DIAMOND_ORE", 0);
+		new RGBBlockValue(new Color(179, 179, 181), new Color(180, 180, 183), new Color(179, 179, 181),
+				new Color(183, 183, 186), "STONE", 3);
+		new RGBBlockValue(new Color(136, 98, 69), new Color(133, 96, 66), new Color(134, 96, 66),
+				new Color(135, 98, 68), "DIRT", 0);
+		new RGBBlockValue(new Color(104, 231, 139), new Color(82, 220, 119), new Color(75, 216, 112),
+				new Color(65, 203, 100), "EMERALD_BLOCK", 0);
+		new RGBBlockValue(new Color(107, 133, 116), new Color(111, 131, 118), new Color(116, 124, 119),
+				new Color(106, 128, 114), "EMERALD_ORE", 0);
+		new RGBBlockValue(new Color(220, 223, 164), new Color(222, 225, 166), new Color(223, 225, 167),
+				new Color(221, 224, 165), "ENDER_STONE", 0);
+		new RGBBlockValue(new Color(127, 175, 255), new Color(122, 172, 255), new Color(125, 173, 255),
+				new Color(128, 175, 255), "PACKED_ICE", 0);
+		new RGBBlockValue(new Color(71, 71, 71), new Color(83, 83, 83), new Color(73, 73, 73), new Color(86, 86, 86),
+				"FURNACE", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(71, 71, 71), new Color(179, 135, 99), new Color(73, 73, 73),
+				new Color(178, 131, 98), "BURNING_FURNACE", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(96, 96, 96), new Color(133, 133, 133), new Color(96, 96, 96),
+				new Color(130, 130, 130), "FURNACE", 0);
+		new RGBBlockValue(new Color(150, 122, 74), new Color(144, 120, 72), new Color(149, 123, 72),
+				new Color(133, 109, 62), "GLOWSTONE", 0);
+		new RGBBlockValue(new Color(248, 238, 80), new Color(251, 242, 92), new Color(249, 239, 73),
+				new Color(250, 228, 71), "GOLD_BLOCK", 0);
+		new RGBBlockValue(new Color(144, 142, 129), new Color(135, 133, 123), new Color(138, 135, 124),
+				new Color(158, 150, 126), "GOLD_ORE", 0);
+		new RGBBlockValue(new Color(144, 144, 144), new Color(132, 132, 132), new Color(142, 142, 142),
+				new Color(131, 131, 131), "GRASS", 0);
+		new RGBBlockValue(new Color(128, 125, 123), new Color(130, 127, 126), new Color(127, 124, 123),
+				new Color(125, 122, 120), "GRAVEL", 0);
+		new RGBBlockValue(new Color(89, 96, 99), new Color(79, 88, 92), new Color(72, 81, 85), new Color(94, 98, 101),
+				"GRAY_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(146, 162, 120), new Color(108, 138, 49), new Color(108, 138, 48),
+				new Color(107, 133, 54), "GREEN_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(158, 116, 18), new Color(157, 118, 19), new Color(160, 117, 18),
+				new Color(158, 117, 19), "HAY_BLOCK", 0);
+		new RGBBlockValue(new Color(222, 222, 222), new Color(222, 222, 222), new Color(218, 218, 218),
+				new Color(217, 217, 217), "IRON_BLOCK", 0);
+		new RGBBlockValue(new Color(137, 132, 128), new Color(130, 127, 124), new Color(132, 128, 126),
+				new Color(145, 136, 131), "IRON_ORE", 0);
+		new RGBBlockValue(new Color(156, 120, 74), new Color(153, 119, 73), new Color(154, 119, 74),
+				new Color(154, 119, 74), "LOG", 15);
+		new RGBBlockValue(new Color(40, 76, 151), new Color(40, 65, 137), new Color(38, 67, 138),
+				new Color(39, 62, 126), "LAPIS_BLOCK", 0);
+		new RGBBlockValue(new Color(104, 115, 139), new Color(100, 109, 132), new Color(114, 118, 129),
+				new Color(93, 107, 139), "LAPIS_ORE", 0);
+		new RGBBlockValue(new Color(69, 140, 196), new Color(96, 152, 202), new Color(98, 169, 211),
+				new Color(117, 200, 228), "LIGHT_BLUE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(163, 172, 175), new Color(108, 157, 159), new Color(142, 162, 164),
+				new Color(166, 175, 177), "WHITE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(138, 196, 48), new Color(180, 199, 62), new Color(179, 198, 60),
+				new Color(156, 199, 52), "LIME_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(205, 97, 187), new Color(212, 103, 196), new Color(205, 98, 188),
+				new Color(213, 105, 198), "MAGENTA_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(137, 67, 25), new Color(140, 68, 25), new Color(128, 62, 26),
+				new Color(136, 66, 26), "MAGMA", 0);
+		new RGBBlockValue(new Color(138, 144, 35), new Color(143, 148, 37), new Color(143, 147, 37),
+				new Color(144, 147, 37), "MELON_BLOCK", 0);
+		new RGBBlockValue(new Color(104, 124, 104), new Color(106, 122, 106), new Color(104, 121, 104),
+				new Color(103, 121, 103), "MOSSY_COBBLESTONE", 0);
+		new RGBBlockValue(new Color(101, 88, 89), new Color(131, 95, 67), new Color(97, 80, 76), new Color(127, 92, 65),
+				"MYCEL", 0);
+		new RGBBlockValue(new Color(118, 61, 59), new Color(108, 50, 49), new Color(108, 50, 49),
+				new Color(112, 57, 54), "NETHERRACK", 0);
+		new RGBBlockValue(new Color(46, 23, 27), new Color(45, 23, 27), new Color(45, 23, 27), new Color(44, 23, 27),
+				"NETHER_BRICK", 0);
+		new RGBBlockValue(new Color(117, 7, 8), new Color(115, 6, 7), new Color(120, 8, 8), new Color(119, 7, 7),
+				"NETHER_WART_BLOCK", 0);
+		new RGBBlockValue(new Color(101, 67, 50), new Color(102, 69, 52), new Color(101, 68, 51),
+				new Color(101, 68, 51), "NOTE_BLOCK", 0);
+		new RGBBlockValue(new Color(154, 124, 77), new Color(155, 125, 77), new Color(157, 127, 78),
+				new Color(156, 126, 78), "LOG", 12);
+		new RGBBlockValue(new Color(68, 66, 66), new Color(69, 67, 67), new Color(69, 67, 67), new Color(70, 68, 68),
+				"OBSERVER", 0, BlockFace.WEST);
+		new RGBBlockValue(new Color(91, 90, 90), new Color(117, 117, 117), new Color(88, 87, 87),
+				new Color(115, 115, 115), "OBSERVER", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(62, 60, 60), new Color(63, 61, 61), new Color(64, 62, 62), new Color(63, 62, 62),
+				"OBSERVER", 0, BlockFace.NORTH);
+		new RGBBlockValue(new Color(21, 19, 31), new Color(20, 18, 29), new Color(21, 19, 31), new Color(20, 18, 30),
+				"OBSIDIAN", 0);
+		new RGBBlockValue(new Color(190, 152, 78), new Color(164, 134, 75), new Color(164, 138, 77),
+				new Color(102, 168, 140), "ORANGE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(167, 196, 246), new Color(164, 193, 245), new Color(164, 193, 244),
+				new Color(168, 197, 249), "PACKED_ICE", 0);
+		new RGBBlockValue(new Color(232, 155, 180), new Color(239, 153, 182), new Color(239, 157, 185),
+				new Color(232, 155, 181), "PINK_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(96, 96, 96), new Color(98, 98, 98), new Color(96, 96, 96), new Color(96, 96, 96),
+				"PISTON_BASE", 0, BlockFace.WEST);
+		new RGBBlockValue(new Color(120, 112, 97), new Color(99, 99, 99), new Color(113, 105, 91),
+				new Color(94, 94, 94), "PISTON_BASE", 0);
+		new RGBBlockValue(new Color(152, 129, 89), new Color(154, 130, 89), new Color(155, 131, 92),
+				new Color(156, 131, 91), "PISTON_BASE", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(139, 144, 99), new Color(143, 150, 102), new Color(143, 146, 101),
+				new Color(145, 146, 100), "PISTON_STICKY_BASE", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(105, 169, 148), new Color(105, 168, 149), new Color(110, 172, 151),
+				new Color(109, 173, 157), "PRISMARINE", 0);
+		new RGBBlockValue(new Color(103, 163, 146), new Color(101, 161, 143), new Color(103, 163, 145),
+				new Color(95, 155, 140), "PRISMARINE", 1);
+		new RGBBlockValue(new Color(150, 84, 16), new Color(141, 76, 11), new Color(142, 77, 12),
+				new Color(137, 73, 12), "PUMPKIN", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(187, 135, 31), new Color(181, 125, 25), new Color(187, 135, 29),
+				new Color(188, 140, 30), "JACK_O_LANTERN", 0, BlockFace.EAST);
+		new RGBBlockValue(new Color(203, 126, 27), new Color(195, 118, 21), new Color(195, 119, 23),
+				new Color(199, 122, 24), "PUMPKIN", 0, BlockFace.WEST);
+		new RGBBlockValue(new Color(124, 63, 167), new Color(102, 44, 141), new Color(102, 44, 142),
+				new Color(113, 43, 161), "PURPLE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(167, 122, 167), new Color(168, 124, 168), new Color(165, 121, 165),
+				new Color(168, 123, 168), "PURPUR_BLOCK", 0);
+		new RGBBlockValue(new Color(170, 127, 170), new Color(171, 127, 171), new Color(170, 127, 170),
+				new Color(171, 127, 171), "PURPUR_PILLAR", 0);
+		new RGBBlockValue(new Color(238, 236, 229), new Color(236, 233, 226), new Color(237, 234, 227),
+				new Color(234, 231, 224), "QUARTZ_BLOCK", 0);
+		new RGBBlockValue(new Color(135, 97, 91), new Color(125, 82, 78), new Color(123, 84, 79),
+				new Color(119, 77, 73), "QUARTZ_ORE", 0);
+		new RGBBlockValue(new Color(171, 28, 10), new Color(174, 28, 10), new Color(171, 28, 10),
+				new Color(171, 28, 10), "REDSTONE_BLOCK", 0);
+		new RGBBlockValue(new Color(71, 44, 27), new Color(67, 42, 26), new Color(70, 43, 27), new Color(75, 47, 29),
+				"REDSTONE_LAMP_OFF", 0);
+		new RGBBlockValue(new Color(121, 91, 56), new Color(114, 84, 50), new Color(118, 89, 56),
+				new Color(126, 94, 59), "REDSTONE_LAMP_ON", 0);
+		new RGBBlockValue(new Color(134, 109, 109), new Color(129, 112, 112), new Color(130, 111, 111),
+				new Color(139, 100, 100), "REDSTONE_ORE", 0);
+		new RGBBlockValue(new Color(96, 0, 0), new Color(135, 112, 64), new Color(64, 0, 0), new Color(64, 48, 32),
+				"REDSTONE_TORCH_OFF", 0);
+		new RGBBlockValue(new Color(169, 47, 43), new Color(192, 70, 61), new Color(177, 54, 49),
+				new Color(192, 70, 61), "RED_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(70, 5, 7), new Color(71, 4, 6), new Color(67, 6, 9), new Color(67, 4, 7),
+				"RED_NETHER_BRICK", 0);
+		new RGBBlockValue(new Color(167, 85, 30), new Color(166, 85, 30), new Color(167, 85, 30),
+				new Color(165, 84, 30), "RED_SANDSTONE", 0);
+		new RGBBlockValue(new Color(124, 107, 179), new Color(124, 108, 173), new Color(124, 107, 172),
+				new Color(125, 109, 165), "COMMAND_REPEATING", 0);
+		new RGBBlockValue(new Color(219, 212, 160), new Color(218, 210, 159), new Color(220, 213, 162),
+				new Color(220, 212, 161), "SAND", 0);
+		new RGBBlockValue(new Color(219, 211, 160), new Color(217, 210, 157), new Color(218, 210, 158),
+				new Color(216, 209, 155), "SANDSTONE", 0);
+		new RGBBlockValue(new Color(173, 201, 191), new Color(171, 199, 190), new Color(174, 201, 192),
+				new Color(173, 201, 192), "SEA_LANTERN", 0);
+		new RGBBlockValue(new Color(121, 201, 102), new Color(123, 202, 104), new Color(121, 201, 100),
+				new Color(119, 198, 100), "SLIME_BLOCK", 0);
+		new RGBBlockValue(new Color(243, 252, 252), new Color(239, 251, 251), new Color(240, 251, 251),
+				new Color(240, 251, 251), "SNOW_BLOCK", 0);
+		new RGBBlockValue(new Color(82, 62, 49), new Color(88, 68, 55), new Color(84, 64, 51), new Color(86, 65, 53),
+				"SOUL_SAND", 0);
+		new RGBBlockValue(new Color(194, 195, 84), new Color(195, 196, 85), new Color(197, 197, 86),
+				new Color(195, 196, 86), "SPONGE", 0);
+		new RGBBlockValue(new Color(104, 81, 48), new Color(105, 82, 48), new Color(106, 82, 49),
+				new Color(106, 82, 49), "LOG", 13);
+		new RGBBlockValue(new Color(125, 125, 125), new Color(125, 125, 125), new Color(125, 125, 125),
+				new Color(128, 128, 128), "STONE", 0);
+		new RGBBlockValue(new Color(155, 116, 101), new Color(151, 112, 97), new Color(153, 113, 97),
+				new Color(156, 117, 101), "STONE", 1);
+		new RGBBlockValue(new Color(171, 171, 171), new Color(170, 170, 170), new Color(163, 163, 163),
+				new Color(165, 165, 165), "STONE", 0);
+		new RGBBlockValue(new Color(160, 160, 160), new Color(159, 159, 159), new Color(159, 159, 159),
+				new Color(162, 162, 162), "DOUBLE_STEP", 8);
+		new RGBBlockValue(new Color(89, 74, 89), new Color(89, 74, 89), new Color(90, 76, 91), new Color(90, 75, 91),
+				"STRUCTURE_BLOCK", 0);
+		new RGBBlockValue(new Color(237, 232, 178), new Color(194, 216, 207), new Color(194, 216, 208),
+				new Color(131, 187, 220), "WHITE_GLAZED_TERRACOTTA", 0);
+		new RGBBlockValue(new Color(251, 217, 114), new Color(241, 197, 81), new Color(240, 197, 82),
+				new Color(206, 159, 79), "YELLOW_GLAZED_TERRACOTTA", 0);
+
+		new RGBBlockValue(new Color(159, 158, 63), new Color(160, 159, 62), new Color(162, 161, 64),
+				new Color(161, 160, 66), "SPONGE", 1);
+
 		// int log_index = 12;
 		// int log2_index = 12;
 		/*
@@ -430,7 +528,6 @@ public class RGBBlockColor {
 		 * + log_index); new RGBBlockValue(new Color(45, 28, 12), new Color(48, 31, 14),
 		 * new Color(45, 28, 12), new Color(47, 30, 13), "LOG", 1 + log_index);
 		 */
-
 
 		new RGBBlockValue(new Color(210, 177, 125), new Color(210, 144, 102), new Color(210, 177, 125),
 				new Color(205, 173, 122), "HUGE_MUSHROOM_2");

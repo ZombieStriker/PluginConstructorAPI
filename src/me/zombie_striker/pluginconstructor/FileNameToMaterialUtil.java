@@ -1,7 +1,5 @@
 package me.zombie_striker.pluginconstructor;
 
-import java.awt.Color;
-
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -32,10 +30,21 @@ public class FileNameToMaterialUtil {
 				|| filename.equalsIgnoreCase("reeds") || filename.equalsIgnoreCase("tourch")
 				|| filename.equalsIgnoreCase("redstone_torch") || filename.equalsIgnoreCase("redstone")
 				|| filename.equalsIgnoreCase("trip_wire") || filename.equalsIgnoreCase("MONSTER_EGG")
-				|| filename.equalsIgnoreCase("LEVER")|| filename.equalsIgnoreCase("BROWN_MUSHROOM")|| filename.equalsIgnoreCase("RED_MUSHROOM")) {
+				|| filename.equalsIgnoreCase("LEVER") || filename.equalsIgnoreCase("BROWN_MUSHROOM")
+				|| filename.equalsIgnoreCase("RED_MUSHROOM") || filename.equalsIgnoreCase("TORCH")
+				|| filename.equalsIgnoreCase("SUGAR_CANE") || filename.equalsIgnoreCase("PUMPKIN_STEM")
+				|| filename.equalsIgnoreCase("PORTAL") || filename.equalsIgnoreCase("MELON_STEM")|| filename.equalsIgnoreCase("CHORUS_FLOWER")|| filename.equalsIgnoreCase("DEAD_BUSH")|| filename.equalsIgnoreCase("SUGAR_CANE")) {
 			return null;
 		}
-		if (Material.matchMaterial(m) == null) {
+		if (Material.matchMaterial(m) != null) {
+			if (filename.equalsIgnoreCase("snow")) {
+				m = "SNOW_BLOCK";
+			} else if (filename.equalsIgnoreCase("SUGAR_CANE")) {
+				//
+			}
+			if(!Material.matchMaterial(m).isBlock())
+				return null;
+		} else {
 			// gfdasgdfssgdfgfdsgdsgdfgfgdsfdsgfdgsfgfsdfgfgsgfsfggfd
 			if (filename.equalsIgnoreCase("bone_block_side")) {
 				m = "BONE_BLOCK";
