@@ -1082,6 +1082,7 @@ class Skin implements ConfigurationSerializable {
 	 * @param callBack
 	 *            the call back to handle the result of the request
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void getSkin(UUID uuid, SkinCallBack callBack) {
 		/*
 		 * if(!skin_Enabled) { callBack.callBack(Skin.EMPTY_SKIN, false, null); return;
@@ -1106,7 +1107,6 @@ class Skin implements ConfigurationSerializable {
 			}
 		} else {
 			new BukkitRunnable() {
-				@SuppressWarnings("unchecked")
 				@Override
 				public void run() {
 					try {

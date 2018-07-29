@@ -26,26 +26,109 @@ public class FileNameToMaterialUtil {
 				|| filename.equalsIgnoreCase("BREWING_STAND") || filename.equalsIgnoreCase("carrot")
 				|| filename.equalsIgnoreCase("deadbush") || filename.equalsIgnoreCase("DRAGON_EGG")
 				|| filename.equalsIgnoreCase("fern") || filename.equalsIgnoreCase("iron_bars")
-				|| filename.equalsIgnoreCase("potatoes") || filename.contains("rail_") || filename.contains("_rail")
-				|| filename.equalsIgnoreCase("reeds") || filename.equalsIgnoreCase("tourch")
+				|| filename.equalsIgnoreCase("potatoes") || filename.equals("rail") || filename.contains("_rail")
+				|| filename.equalsIgnoreCase("reeds") 
 				|| filename.equalsIgnoreCase("redstone_torch") || filename.equalsIgnoreCase("redstone")
 				|| filename.equalsIgnoreCase("trip_wire") || filename.equalsIgnoreCase("MONSTER_EGG")
 				|| filename.equalsIgnoreCase("LEVER") || filename.equalsIgnoreCase("BROWN_MUSHROOM")
 				|| filename.equalsIgnoreCase("RED_MUSHROOM") || filename.equalsIgnoreCase("TORCH")
 				|| filename.equalsIgnoreCase("SUGAR_CANE") || filename.equalsIgnoreCase("PUMPKIN_STEM")
-				|| filename.equalsIgnoreCase("PORTAL") || filename.equalsIgnoreCase("MELON_STEM")|| filename.equalsIgnoreCase("CHORUS_FLOWER")|| filename.equalsIgnoreCase("DEAD_BUSH")|| filename.equalsIgnoreCase("SUGAR_CANE")) {
+				|| filename.equalsIgnoreCase("PORTAL") || filename.equalsIgnoreCase("MELON_STEM")
+				|| filename.equalsIgnoreCase("CHORUS_FLOWER") || filename.equalsIgnoreCase("DEAD_BUSH")
+				|| filename.equalsIgnoreCase("SUGAR_CANE") || filename.contains("shulker")
+				|| filename.endsWith("sapling") || filename.equals("tripwire") || filename.equals("tripwire_hook")
+				|| filename.equals("tripwire_hook") || filename.equals("iron_block") || filename.equals("snow")
+				|| filename.equals("beacon") || filename.equals("cobweb") || filename.equals("dandelion")
+				|| filename.equals("comparator") || filename.equals("conduit") || filename.equals("repeater") || filename.equals("poppy") || filename.equals("white_tulip")
+				|| filename.equals("pink_tulip") || filename.equals("red_tulip") || filename.equals("orange_tulip")
+				|| filename.equals("allium") || filename.equals("azure_bluet") || filename.equals("blue_orchid")
+				|| filename.endsWith("_leaves") || filename.equals("lily_pad")
+				|| filename.equals("attached_pumpkin_stem")|| filename.equals("attached_melon_stem") || filename.equals("kelp_plant")|| filename.equals("kelp")
+
+				|| filename.equals("turtle_egg") || filename.contains("coral_fan") || filename.equals("sea_pickle")|| filename.equals("seagrass")
+				|| filename.equals("farmland") || filename.equals("oxeye_daisy") || filename.endsWith("_coral")) {
 			return null;
 		}
+		
+		
+		
 		if (Material.matchMaterial(m) != null) {
 			if (filename.equalsIgnoreCase("snow")) {
 				m = "SNOW_BLOCK";
-			} else if (filename.equalsIgnoreCase("SUGAR_CANE")) {
-				//
 			}
-			if(!Material.matchMaterial(m).isBlock())
+			if (ReflectionUtil.isVersionHigherThan(1, 13)) {
+				
+				if(filename.endsWith("coral_block")&&!filename.startsWith("dead"))
+					return null;
+				//TODO: Figure out ways to keep coral alive without water.
+				
+				if (filename.equalsIgnoreCase("mycelium")) 
+					return null;
+				if (filename.equals("redstone_torch_off"))
+					return null;
+				if (filename.equals("redstone_lamp_off"))
+					return null;
+				if (filename.equals("redstone_lamp_on"))
+					return null;
+				if (filename.equals("grass"))
+					return null;
+				if (filename.contains("_trapdoor"))
+					return null;
+				if (filename.contains("_stained_glass"))
+					return null;
+				if (filename.equals("spawner"))
+					return null;
+			}
+			if (!Material.matchMaterial(m).isBlock())
 				return null;
 		} else {
 			// gfdasgdfssgdfgfdsgdsgdfgfgdsfdsgfdgsfgfsdfgfgsgfsfggfd
+
+			// 1.13 code.
+			if (ReflectionUtil.isVersionHigherThan(1, 13)) {
+				if (filename.equalsIgnoreCase("acacia_planks")) {
+					m = "ACACIA_WOOD";
+				} else if (filename.equalsIgnoreCase("birtch_planks")) {
+					m = "BIRTCH_WOOD";
+				} else if (filename.equalsIgnoreCase("oak_planks")) {
+					m = "OAK_WOOD";
+				} else if (filename.equalsIgnoreCase("dark_oak_planks")) {
+					m = "DARK_OAK_WOOD";
+				} else if (filename.equalsIgnoreCase("spruce_planks")) {
+					m = "SPRUCE_WOOD";
+				} else if (filename.equalsIgnoreCase("jungle_planks")) {
+					m = "JUNGLE_WOOD";
+				} else if (filename.equalsIgnoreCase("chain_command_block_front")) {
+					m = "CHAIN_COMMAND_BLOCK";
+				} else if (filename.equalsIgnoreCase("command_block_front")) {
+					m = "COMMAND_BLOCK";
+				} else if (filename.equalsIgnoreCase("crafting_table_side")) {
+					m = "CRAFTING_TABLE";
+				} else if (filename.equalsIgnoreCase("dispenser_front")) {
+					m = "DISPENCER";
+					facing = BlockFace.EAST;
+				} else if (filename.equalsIgnoreCase("dried_kelp_side")) {
+					m = "DRIED_KELP_BLOCK";
+				} else if (filename.equalsIgnoreCase("frosted_ice_0")) {
+					m = "FROSTED_ICE";
+				} else if (filename.equalsIgnoreCase("iron_block")) {
+					m = "IRON_BLOCK";
+				} else if (filename.equalsIgnoreCase("magma")) {
+					m = "MAGMA_BLOCK";
+				} else if (filename.equalsIgnoreCase("melon_side")) {
+					m = "MELON";
+				} else if (filename.equalsIgnoreCase("repeating_command_block_front")) {
+					m = "REPEATING_COMMAND_BLOCK";
+				} else if (filename.equalsIgnoreCase("sandstone_top")) {
+					m = "SMOOTH_SANDSTONE";
+				} else if (filename.equalsIgnoreCase("red_sandstone_top")) {
+					m = "SMOOTH_RED_SANDSTONE";
+				} else if (filename.equalsIgnoreCase("stone_slab_top")) {
+					m = "SMOOTH_STONE";
+						
+						
+				}
+			}
 			if (filename.equalsIgnoreCase("bone_block_side")) {
 				m = "BONE_BLOCK";
 
@@ -67,6 +150,8 @@ public class FileNameToMaterialUtil {
 				m = "FURNACE";
 				facing = BlockFace.EAST;
 			} else if (filename.equalsIgnoreCase("furnace_front_on")) {
+				if (ReflectionUtil.isVersionHigherThan(1, 13))
+					return null;
 				m = "BURNING_FURNACE";
 				facing = BlockFace.EAST;
 			} else if (filename.equalsIgnoreCase("observer_back")) {
@@ -163,7 +248,11 @@ public class FileNameToMaterialUtil {
 				if ((b != 1 || m.contains("1")) && RGBBlockColor.isVersionHigherThan(1, 12))
 					m = "Fail";
 			} else if (filename.equalsIgnoreCase("mycelium_side")) {
-				m = "MYCEL";
+				if (ReflectionUtil.isVersionHigherThan(1, 13))
+					return null;
+					//m = "MYCELIUM";
+				else
+					m = "MYCEL";
 			} else if (filename.equalsIgnoreCase("noteblock")) {
 				m = "NOTE_BLOCK";
 			} else if (filename.equalsIgnoreCase("piston_side")) {
@@ -218,6 +307,8 @@ public class FileNameToMaterialUtil {
 				m = "SPONGE";
 				b = 1;
 			} else if (filename.equalsIgnoreCase("stone_slab_top")) {
+				if (ReflectionUtil.isVersionHigherThan(1, 13))
+					return null;
 				m = "DOUBLE_STEP";
 				b = 8;
 			} else if (filename.equals("cobblestone")) {
@@ -276,8 +367,9 @@ public class FileNameToMaterialUtil {
 
 			}
 		}
-		if (Material.getMaterial(m.toUpperCase()) == null || Material.getMaterial(m.toUpperCase()) == Material.AIR)
+		if (Material.matchMaterial(m) == null || Material.matchMaterial(m) == Material.AIR) {
 			return null;
+		}
 		return new MaterialData(Material.getMaterial(m.toUpperCase()), b, facing);
 	}
 }

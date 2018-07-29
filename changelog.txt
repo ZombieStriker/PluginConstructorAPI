@@ -1,3 +1,27 @@
+1.0.43
+	Added full 1.13 support for RGBBlockColor
+
+1.0.42
+	Added pre-support for 1.13
+
+1.0.41
+	Fixed hotbarmessage for 1.10R1
+
+1.0.40
+	Fixed mapwall another time. It seems the customimagerenderers are not replaced across reloads.
+
+1.0.39
+	Fixed mapwall again. Fixed redunant code. Made map walls x500 more efficient.
+
+1.0.38
+	Added ability to go over for map wall if image is too big. This will stop cutoffs, at the sake of adding an extra map
+
+1.0.37
+	Fixed issue with mapwall
+
+1.0.36
+	Fixed issue with async
+
 1.0.35
 	Fixed wetsponge
 

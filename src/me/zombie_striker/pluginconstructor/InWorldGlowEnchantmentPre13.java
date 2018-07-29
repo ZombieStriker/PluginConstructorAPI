@@ -15,15 +15,20 @@
  */
 package me.zombie_striker.pluginconstructor;
 
-import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.inventory.ItemStack;
 
-public class InWorldGlowEnchantment extends Enchantment{
+public class InWorldGlowEnchantmentPre13 extends Enchantment{
+		int id = 0;
 	
-	  public InWorldGlowEnchantment (NamespacedKey id) {
-	      super(id);
+	  public InWorldGlowEnchantmentPre13 (int id) {
+		  super(null);
+	    //  super(id);
+		  this.id = id;
+	  }
+	  public int getId() {
+		  return id;
 	  }
 	 
 	  @Override

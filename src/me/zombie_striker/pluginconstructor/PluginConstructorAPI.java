@@ -4,6 +4,7 @@ import java.io.File;
 import java.lang.reflect.Field;
 
 import org.bukkit.ChatColor;
+import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
@@ -17,29 +18,30 @@ import me.zombie_striker.pluginconstructor.privateshop.PluginShop;
 public class PluginConstructorAPI extends JavaPlugin {
 
 	static Plugin instance;
+	
+	static Enchantment glowEffect =null;
 
 	@Override
 	public void onEnable() {
 		instance = this;
-		
+
 		Plugin thi = this;
-		
-		
-		//RGBBlockColor.printOutLineFor(doorAc, Material.ACACIA_DOOR, 0);
+
+		// RGBBlockColor.printOutLineFor(doorAc, Material.ACACIA_DOOR, 0);
 
 		// We are no longer using bukkitdev. Github should be the main updater
 		new BukkitRunnable() {
-			
+
 			@Override
 			public void run() {
-				if(GithubUpdater.autoUpdate(thi, "ZombieStriker", "PluginConstructorAPI", "PluginConstructorAPI.jar"))
+				if (GithubUpdater.autoUpdate(thi, "ZombieStriker", "PluginConstructorAPI", "PluginConstructorAPI.jar"))
 					cancel();
 			}
-		}.runTaskTimer(this, 1, 20*60*60*24);
+		}.runTaskTimer(this, 1, 20 * 60 * 60 * 24);
 		// new Updater(this, 276723, getConfig().getBoolean("auto-update"));
 
-		/*Metrics met =*/ new Metrics(this);
-		//shopcheck();
+		/* Metrics met = */ new Metrics(this);
+		// shopcheck();
 	}
 
 	@Override
@@ -107,6 +109,7 @@ public class PluginConstructorAPI extends JavaPlugin {
 		sender.sendMessage("/PCAPI shop: Access all plugins that the server can download");
 	}
 
+	@SuppressWarnings("unused")
 	private void shopcheck() {
 		int k = 0;
 		for (int i : shop.getAllPluginsIDS()) {
@@ -119,9 +122,13 @@ public class PluginConstructorAPI extends JavaPlugin {
 			}.runTaskTimerAsynchronously(PluginConstructorAPI.instance, (15 * 60 * 20) + (k * 40), 30 * 60 * 20);
 		}
 	}
+	@Deprecated
+	public static int registerGlow() {
+		return 0;
+	}
 
 	@SuppressWarnings("deprecation")
-	public static int registerGlow() {
+	public static Enchantment registerGlowEnchantment() {
 		try {
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
 			f.setAccessible(true);
@@ -129,26 +136,32 @@ public class PluginConstructorAPI extends JavaPlugin {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		int id = 334;
+		if(glowEffect!=null) {
+			return glowEffect;
+		}
 		try {
-			while (true) {
-				id++;
-				if (Enchantment.getById(id) == null) {
-					InWorldGlowEnchantment glow = new InWorldGlowEnchantment(id);
-					if (Enchantment.getByName(glow.getName()) == null) {
-						Enchantment.registerEnchantment(glow);
-						return id;
-					} else {
-						return Enchantment.getByName(glow.getName()).getId();
-					}
+			try {
+				InWorldGlowEnchantment glow = new InWorldGlowEnchantment(
+						new NamespacedKey(instance, "PluginConstructorAPI:Glow"));
+				if (Enchantment.getByName(glow.getName()) == null) {
+					Enchantment.registerEnchantment(glow);
 				}
+				glowEffect = glow;
+				return glow;
+			} catch (Error
+					| Exception e45) {/*
+										 * if (Enchantment.getById(id) == null) { InWorldGlowEnchantmentPre13 glow = new
+										 * InWorldGlowEnchantmentPre13(id); if (Enchantment.getByName(glow.getName()) ==
+										 * null) { Enchantment.registerEnchantment(glow); return id; } else { return
+										 * Enchantment.getByName(glow.getName()).getId(); } }
+										 */
 			}
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return 334;
+		return Enchantment.PROTECTION_ENVIRONMENTAL;
 
 	}
 

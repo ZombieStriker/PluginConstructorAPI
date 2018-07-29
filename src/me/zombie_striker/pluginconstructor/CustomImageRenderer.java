@@ -26,12 +26,10 @@ public class CustomImageRenderer extends MapRenderer {
 	private int frameCount = 0;
 	private int cTicks = 550;
 	private int ticks = 0;
-	public static int TICK_FOR_STILLS = 10;
+	public static int TICK_FOR_STILLS = 500;
 
 	public CustomImageRenderer(BufferedImage[] bi, int ticks) {
 		this.image = bi;
-		for (int i = 0; i < bi.length; i++) {
-		}
 		this.ticks = ticks;
 	}
 
@@ -46,11 +44,11 @@ public class CustomImageRenderer extends MapRenderer {
 
 	@Override
 	public void render(MapView view, MapCanvas canvas, Player player) {
-		if (cTicks >= ticks - 1) {
-			canvas.drawImage(0, 0, image[frameCount]);
-			frameCount++;
-			if (frameCount == image.length)
-				frameCount = 0;
+		if (cTicks >= ticks) {
+			if (image != null && image[frameCount] != null)
+				canvas.drawImage(0, 0, image[frameCount]);
+			frameCount=frameCount++%image.length;
+			cTicks=0;
 		}
 		cTicks++;
 	}
