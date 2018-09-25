@@ -1,3 +1,9 @@
+1.0.45
+	Fixed GlowEnchantments so that it does not display a name/ does not default to Protection
+
+1.0.44
+	Added ReflectionUtil to its own package, so other plugins can easily access it without the REMOVELATER
+
 1.0.43
 	Added full 1.13 support for RGBBlockColor
 

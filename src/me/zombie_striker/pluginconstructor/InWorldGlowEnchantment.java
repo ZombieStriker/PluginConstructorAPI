@@ -48,7 +48,7 @@ public class InWorldGlowEnchantment extends Enchantment{
 	 
 	  @Override
 	  public String getName() {
-	      return null;
+	      return ". ";
 	  }
 	 
 	  @Override

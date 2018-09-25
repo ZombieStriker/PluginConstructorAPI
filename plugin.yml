@@ -1,5 +1,5 @@
 main: me.zombie_striker.pluginconstructor.PluginConstructorAPI
-version: 1.0.42
+version: 1.0.45
 api-version: 1.13
 name: PluginConstructorAPI
 author:

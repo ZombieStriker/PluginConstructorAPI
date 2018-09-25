@@ -30,6 +30,20 @@ import org.bukkit.map.MapView;
 
 public class MapWallUtil {
 
+	@SuppressWarnings("deprecation")
+	public static ItemStack getMap(BufferedImage BUFFEREDIMAGE) {	
+		
+		MapView mv = Bukkit.createMap(Bukkit.getWorlds().get(0));
+		short mapIds = mv.getId();
+		ItemStack is = new ItemStack(Material.MAP, 1, (short) mapIds);
+		for (MapRenderer mr : mv.getRenderers()) {
+			mv.removeRenderer(mr);
+		}
+		mv.addRenderer(new CustomImageRenderer(BUFFEREDIMAGE, CustomImageRenderer.TICK_FOR_STILLS));
+
+		return is;
+	}
+
 	/**
 	 * Remember: The image has to be a multiple of 128
 	 * 
@@ -48,10 +62,11 @@ public class MapWallUtil {
 				height = whole[i].getHeight();
 		}
 		int wd1 = (int) (0.999999999 + (((double) width) / 128));
-		int hd1 = (int) (0.999999999+(((double) height) / 128));
+		int hd1 = (int) (0.999999999 + (((double) height) / 128));
 		ItemStack[][] stacks = new ItemStack[wd1][hd1];
-		if(wd1==0||hd1==0) {
-			Bukkit.broadcast("Image is invalid. Width="+wd1+" Height="+hd1+".", "pluginconstructorapi.detectImage");
+		if (wd1 == 0 || hd1 == 0) {
+			Bukkit.broadcast("Image is invalid. Width=" + wd1 + " Height=" + hd1 + ".",
+					"pluginconstructorapi.detectImage");
 		}
 		for (int x = 0; x < wd1; x++) {
 			for (int y = 0; y < hd1; y++) {
@@ -69,13 +84,13 @@ public class MapWallUtil {
 					}
 					int cW = 127;
 					int cH = 127;
-					//if ((x * 128) + cW == whole[frame].getWidth())
-					//	continue;
+					// if ((x * 128) + cW == whole[frame].getWidth())
+					// continue;
 					if ((x * 128) + cW > whole[frame].getWidth())
-						cW = whole[frame].getWidth()-((x * 128));
+						cW = whole[frame].getWidth() - ((x * 128));
 					if ((y * 128) + cH > whole[frame].getHeight())
-						cH = whole[frame].getHeight()-((y * 128)) ;
-					if(cH<=0||cW<=0)
+						cH = whole[frame].getHeight() - ((y * 128));
+					if (cH <= 0 || cW <= 0)
 						continue;
 					bip[frame] = whole[frame].getSubimage(x * 128, y * 128, cW, cH);
 				}

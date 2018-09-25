@@ -18,8 +18,8 @@ import me.zombie_striker.pluginconstructor.privateshop.PluginShop;
 public class PluginConstructorAPI extends JavaPlugin {
 
 	static Plugin instance;
-	
-	static Enchantment glowEffect =null;
+
+	static Enchantment glowEffect = null;
 
 	@Override
 	public void onEnable() {
@@ -122,12 +122,12 @@ public class PluginConstructorAPI extends JavaPlugin {
 			}.runTaskTimerAsynchronously(PluginConstructorAPI.instance, (15 * 60 * 20) + (k * 40), 30 * 60 * 20);
 		}
 	}
+
 	@Deprecated
 	public static int registerGlow() {
 		return 0;
 	}
 
-	@SuppressWarnings("deprecation")
 	public static Enchantment registerGlowEnchantment() {
 		try {
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -136,32 +136,19 @@ public class PluginConstructorAPI extends JavaPlugin {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(glowEffect!=null) {
+		if (glowEffect != null) {
 			return glowEffect;
 		}
 		try {
-			try {
-				InWorldGlowEnchantment glow = new InWorldGlowEnchantment(
-						new NamespacedKey(instance, "PluginConstructorAPI:Glow"));
-				if (Enchantment.getByName(glow.getName()) == null) {
-					Enchantment.registerEnchantment(glow);
-				}
-				glowEffect = glow;
-				return glow;
-			} catch (Error
-					| Exception e45) {/*
-										 * if (Enchantment.getById(id) == null) { InWorldGlowEnchantmentPre13 glow = new
-										 * InWorldGlowEnchantmentPre13(id); if (Enchantment.getByName(glow.getName()) ==
-										 * null) { Enchantment.registerEnchantment(glow); return id; } else { return
-										 * Enchantment.getByName(glow.getName()).getId(); } }
-										 */
-			}
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+			InWorldGlowEnchantment glow = new InWorldGlowEnchantment(
+					new NamespacedKey(instance, "PluginConstructorAPI.Glow"));
+			Enchantment.registerEnchantment(glow);
+			glowEffect = glow;
+			return glow;
+		} catch (Error | Exception e45) {
+			e45.printStackTrace();
 		}
-		return Enchantment.PROTECTION_ENVIRONMENTAL;
+		return Enchantment.PROTECTION_PROJECTILE;
 
 	}
 
