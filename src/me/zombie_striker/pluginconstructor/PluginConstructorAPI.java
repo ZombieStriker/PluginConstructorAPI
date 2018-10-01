@@ -146,7 +146,6 @@ public class PluginConstructorAPI extends JavaPlugin {
 			glowEffect = glow;
 			return glow;
 		} catch (Error | Exception e45) {
-			e45.printStackTrace();
 		}
 		return Enchantment.PROTECTION_PROJECTILE;
 

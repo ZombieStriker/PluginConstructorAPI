@@ -1,3 +1,6 @@
+1.0.46
+	Removed error printout for 1.12 for glowing enchantment.
+
 1.0.45
 	Fixed GlowEnchantments so that it does not display a name/ does not default to Protection
 
