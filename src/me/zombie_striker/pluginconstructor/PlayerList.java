@@ -121,6 +121,8 @@ public class PlayerList {
 			PROPERTY = ReflectionUtil.getOLDAuthlibClass("properties.Property");
 			PROPERTY_CONSTRUCTOR = (Constructor<?>) ReflectionUtil
 					.getConstructor(PROPERTY, new Class[] { String.class, String.class, String.class }).get();
+		} else {
+			PROPERTY_MAP = ReflectionUtil.getMojangAuthClass("properties.PropertyMap");
 		}
 
 		WORLD_GAME_MODE_NOT_SET = a() ? ReflectionUtil.getEnumConstant(WORLD_GAME_MODE_CLASS, "NOT_SET") : null;
@@ -507,7 +509,13 @@ public class PlayerList {
 						try {
 							Object map = ReflectionUtil.invokeMethod(profile, "getProperties", new Class[0]);
 							if (skin.getBase64() != null && skin.getSignedBase64() != null) {
-								ReflectionUtil.invokeMethod(map, "removeAll", new Class[] { String.class }, "textures");
+								if (!ReflectionUtil.isVersionHigherThan(1, 13)) {
+									ReflectionUtil.invokeMethod(map, "removeAll", new Class[] { String.class },
+											"textures");
+								} else {
+									ReflectionUtil.invokeMethod(map, "removeAll", new Class[] { Object.class },
+											"textures");
+								}
 								Object prop = ReflectionUtil.instantiate(PROPERTY_CONSTRUCTOR, "textures",
 										skin.getBase64(), skin.getSignedBase64());
 								Method m = null;
@@ -579,6 +587,8 @@ public class PlayerList {
 	}
 
 	private static void sendPacket(Object packet, Player player) {
+		if(player==null)
+			return;
 		Object handle = getHandle(player);
 		Object playerConnection = ReflectionUtil.getInstanceField(handle, "playerConnection");
 		ReflectionUtil.invokeMethod(playerConnection, "sendPacket", new Class[] { PACKET_CLASS }, packet);

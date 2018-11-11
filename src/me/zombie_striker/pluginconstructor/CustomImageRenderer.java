@@ -29,11 +29,13 @@ public class CustomImageRenderer extends MapRenderer {
 	public static int TICK_FOR_STILLS = 500;
 
 	public CustomImageRenderer(BufferedImage[] bi, int ticks) {
+		super(true);
 		this.image = bi;
 		this.ticks = ticks;
 	}
 
 	public CustomImageRenderer(BufferedImage bi, int ticks) {
+		super(true);
 		this.image = new BufferedImage[1];
 		image[0] = bi;
 		this.ticks = ticks;
@@ -41,14 +43,15 @@ public class CustomImageRenderer extends MapRenderer {
 
 	// maps update multiple times per second.
 	// for still images, set ticks to 100;
-
 	@Override
 	public void render(MapView view, MapCanvas canvas, Player player) {
 		if (cTicks >= ticks) {
 			if (image != null && image[frameCount] != null)
 				canvas.drawImage(0, 0, image[frameCount]);
-			frameCount=frameCount++%image.length;
-			cTicks=0;
+			frameCount = (frameCount + 1);// % image.length;
+			if (frameCount >= image.length)
+				frameCount = 0;
+			cTicks = 0;
 		}
 		cTicks++;
 	}

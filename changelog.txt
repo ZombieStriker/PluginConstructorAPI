@@ -1,3 +1,10 @@
+1.0.48
+	Fixed PlayerList error when player's disconnect
+
+1.0.47
+	Added fix for maps in 1.13.
+	Fixed gif maps.
+
 1.0.46
 	Removed error printout for 1.12 for glowing enchantment.
 
@@ -20,7 +27,7 @@
 	Fixed mapwall another time. It seems the customimagerenderers are not replaced across reloads.
 
 1.0.39
-	Fixed mapwall again. Fixed redunant code. Made map walls x500 more efficient.
+	Fixed mapwall again. Fixed redundant code. Made map walls x500 more efficient.
 
 1.0.38
 	Added ability to go over for map wall if image is too big. This will stop cutoffs, at the sake of adding an extra map

@@ -31,11 +31,14 @@ import org.bukkit.map.MapView;
 public class MapWallUtil {
 
 	@SuppressWarnings("deprecation")
-	public static ItemStack getMap(BufferedImage BUFFEREDIMAGE) {	
-		
+	public static ItemStack getMap(BufferedImage BUFFEREDIMAGE) {
+
 		MapView mv = Bukkit.createMap(Bukkit.getWorlds().get(0));
 		short mapIds = mv.getId();
-		ItemStack is = new ItemStack(Material.MAP, 1, (short) mapIds);
+		Material map = Material.MAP;
+		if (ReflectionUtil.isVersionHigherThan(1, 13))
+			map = Material.FILLED_MAP;
+		ItemStack is = new ItemStack(map, 1, (short) mapIds);
 		for (MapRenderer mr : mv.getRenderers()) {
 			mv.removeRenderer(mr);
 		}
@@ -70,12 +73,19 @@ public class MapWallUtil {
 		}
 		for (int x = 0; x < wd1; x++) {
 			for (int y = 0; y < hd1; y++) {
-				MapView mv = Bukkit.createMap(Bukkit.getWorlds().get(0));
-				short mapIds = mv.getId();
-				ItemStack is = new ItemStack(Material.MAP, 1, (short) mapIds);
-				stacks[x][y] = is;
-				for (MapRenderer mr : mv.getRenderers()) {
-					mv.removeRenderer(mr);
+				Material map;
+				MapView mv;
+				ItemStack is;
+				mv = Bukkit.createMap(Bukkit.getWorlds().get(0));
+				if (ReflectionUtil.isVersionHigherThan(1, 13)) {
+					map = Material.FILLED_MAP;
+					is= new ItemStack(map, 1);
+					org.bukkit.inventory.meta.MapMeta mapmeta = (org.bukkit.inventory.meta.MapMeta) is.getItemMeta();
+					mapmeta.setMapId(mv.getId());
+					is.setItemMeta(mapmeta);
+				} else {
+					map = Material.MAP;
+					is= new ItemStack(map, 1, (short) mv.getId());
 				}
 				BufferedImage[] bip = new BufferedImage[frames];
 				for (int frame = 0; frame < frames; frame++) {
@@ -94,8 +104,13 @@ public class MapWallUtil {
 						continue;
 					bip[frame] = whole[frame].getSubimage(x * 128, y * 128, cW, cH);
 				}
-				mv.addRenderer(new CustomImageRenderer(bip, ((frames > 1) ? 0 : CustomImageRenderer.TICK_FOR_STILLS)));
-
+				CustomImageRenderer cir = new CustomImageRenderer(bip,
+						((frames > 1) ? 0 : CustomImageRenderer.TICK_FOR_STILLS));
+				for (MapRenderer mr : mv.getRenderers()) {
+					mv.removeRenderer(mr);
+				}
+				mv.addRenderer(cir);
+				stacks[x][y] = is;
 			}
 		}
 		return stacks;
