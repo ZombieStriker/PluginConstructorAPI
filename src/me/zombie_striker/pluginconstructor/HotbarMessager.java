@@ -1,6 +1,7 @@
 package me.zombie_striker.pluginconstructor;
 
 import java.lang.reflect.*;
+import java.util.UUID;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
@@ -10,7 +11,7 @@ public class HotbarMessager {
 
 	// These are the Class instances. Needed to get fields or methods for classes.
 	private static Class<?> CRAFTPLAYERCLASS, PACKET_PLAYER_CHAT_CLASS, ICHATCOMP, CHATMESSAGE, PACKET_CLASS,
-			CHAT_MESSAGE_TYPE_CLASS;
+			CHAT_MESSAGE_TYPE_CLASS, PACKET_PLAYER_UUID;
 
 	private static Field PLAYERCONNECTION;
 	private static Method GETHANDLE, SENDPACKET;
@@ -39,12 +40,13 @@ public class HotbarMessager {
 			GETHANDLE = CRAFTPLAYERCLASS.getMethod("getHandle");
 			PLAYERCONNECTION = GETHANDLE.getReturnType().getField("playerConnection");
 			SENDPACKET = PLAYERCONNECTION.getType().getMethod("sendPacket", PACKET_CLASS);
+			PACKET_PLAYER_UUID = Class.forName("java.util.UUID");
 			try {
 				CHAT_MESSAGE_TYPE_CLASS = Class.forName("net.minecraft.server." + SERVER_VERSION + ".ChatMessageType");
 				CHAT_MESSAGE_TYPE_ENUM_OBJECT = CHAT_MESSAGE_TYPE_CLASS.getEnumConstants()[2];
 
 				PACKET_PLAYER_CHAT_CONSTRUCTOR = PACKET_PLAYER_CHAT_CLASS.getConstructor(ICHATCOMP,
-						CHAT_MESSAGE_TYPE_CLASS);
+						CHAT_MESSAGE_TYPE_CLASS, PACKET_PLAYER_UUID);
 			} catch (ClassNotFoundException|NoSuchMethodException e) {
 				PACKET_PLAYER_CHAT_CONSTRUCTOR = PACKET_PLAYER_CHAT_CLASS.getConstructor(ICHATCOMP, byte.class);
 				useByte = true;
@@ -67,12 +69,13 @@ public class HotbarMessager {
 		try {
 			// This creates the IChatComponentBase instance
 			Object icb = CHATMESSAGE_CONSTRUCTOR.newInstance(message, new Object[0]);
+			UUID uuid = player.getUniqueId();
 			// This creates the packet
 			Object packet;
 			if (useByte)
-				packet = PACKET_PLAYER_CHAT_CONSTRUCTOR.newInstance(icb, (byte) 2);
+				packet = PACKET_PLAYER_CHAT_CONSTRUCTOR.newInstance(icb, (byte) 2, uuid);
 			else
-				packet = PACKET_PLAYER_CHAT_CONSTRUCTOR.newInstance(icb, CHAT_MESSAGE_TYPE_ENUM_OBJECT);
+				packet = PACKET_PLAYER_CHAT_CONSTRUCTOR.newInstance(icb, CHAT_MESSAGE_TYPE_ENUM_OBJECT, uuid);
 			// This casts the player to a craftplayer
 			Object craftplayerInst = CRAFTPLAYERCLASS.cast(player);
 			// This invokes the method above.
