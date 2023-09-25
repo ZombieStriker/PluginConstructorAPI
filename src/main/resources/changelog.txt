@@ -1,0 +1,170 @@
+1.1.53
+    Code cleanup.
+    Moved to maven
+    Support for 1.8-1.20
+
+1.0.52
+    Fixed glow enchantment for 1.13+
+
+1.0.51
+    Fixed maps so they instantly render
+
+1.0.50
+    Fixed map lines
+
+1.0.49
+    Fixed RGB color code. Should run faster on slower computers
+
+1.0.48
+	Fixed PlayerList error when player's disconnect
+
+1.0.47
+	Added fix for maps in 1.13.
+	Fixed gif maps.
+
+1.0.46
+	Removed error printout for 1.12 for glowing enchantment.
+
+1.0.45
+	Fixed GlowEnchantments so that it does not display a name/ does not default to Protection
+
+1.0.44
+	Added ReflectionUtil to its own package, so other plugins can easily access it without the REMOVELATER
+
+1.0.43
+	Added full 1.13 support for RGBBlockColor
+
+1.0.42
+	Added pre-support for 1.13
+
+1.0.41
+	Fixed hotbarmessage for 1.10R1
+
+1.0.40
+	Fixed mapwall another time. It seems the customimagerenderers are not replaced across reloads.
+
+1.0.39
+	Fixed mapwall again. Fixed redundant code. Made map walls x500 more efficient.
+
+1.0.38
+	Added ability to go over for map wall if image is too big. This will stop cutoffs, at the sake of adding an extra map
+
+1.0.37
+	Fixed issue with mapwall
+
+1.0.36
+	Fixed issue with async
+
+1.0.35
+	Fixed wetsponge
+
+1.0.34
+	Added support for transparent images
+
+1.0.33
+	Added more blocks to rgbblockcolor
+
+1.0.32
+Stopped pinging
+
+1.0.31
+	Fixed timings
+
+1.0.29
+	Added WCSR To shop
+
+1.0.28
+	Fixed updater time-out error.
+
+1.0.27
+	Fixed Github updater
+
+1.0.26
+	Added failsafes for hotbar messager
+
+1.0.25
+	 code cleanup
+
+1.0.24
+	Added doors to RGB blockcolor
+
+1.0.23
+	Added auto-Updater timer. Now it wil lcheck every 24 hours
+
+1.0.21
+	fixed Timing
+
+1.0.20
+	Stuff
+
+1.0.19
+	Added support to limit which materials are used.
+
+1.0.18
+	Fixed HotbarMessager
+
+1.0.17
+	Added Github Updater
+	Removed bukkit system for updating. This should be I no longer need to rely on a system waiting days for the new update to be downloaded to users
+	
+1.0.16
+	-Test update
+
+1.0.15
+	Added /pluginConstructorAPI or /pcapi
+	Added a shop sub-command
+	Added PluginShop to download my plugins if the player has permission.
+	Added permissions.
+
+1.0.14
+	Added metrics
+
+1.0.13
+	Fixed updater
+
+1.0.12
+	Fixed ObjectRotator
+	Updated playerlist
+
+1.0.11
+	Added ObjectRotator
+	Added more plugins for support
+
+1.0.10
+	Improved system for storing plugin IDs
+	Fixed counter.
+	Minor code cleanup
+	Added AIR for transparent pixel values for PP
+
+1.0.9
+	Fixed file hashing error
+	Added support for more of my plugins.
+
+1.0.8
+	Files are no longer downloaded to the computer (weird bug fixed)
+
+1.0.7
+	Fixed file streaming.
+
+1.0.6
+	Added and updated PlayerList tab. Added header-footer, and included texture support.
+	Fixed file streaming. There are no longer a need for physical files in order to get my other plugins
+
+1.0.5
+	Fixed file streaming. Should fix any errors if the plugin cannot connect to bukkitdev.
+	
+ 1.0.4
+ 	Added improved color detection for PP
+ 	
+ 1.0.3
+ 	Added support for NPCAuctions
+ 	Added proxie util
+ 	
+ 1.0.2
+	Fixed webparser to include single quote support for href.
+	Added support for more of my plugins
+ 	
+1.0.0
+	init post
+
+
